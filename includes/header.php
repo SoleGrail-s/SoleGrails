@@ -4,6 +4,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 	<?php if (isset($page_title) && !empty($page_title)): ?>
 		<title>
 			<?php echo trim($page_title); ?> | SoleGrail's
@@ -11,11 +13,11 @@
 	<?php else: ?>
 		<title>SoleGrail's</title>
 	<?php endif; ?>
+	<title>SoleGrail's</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/assets/css/font-awesome.css">
-	<link rel="stylesheet" href="/assets/css/style.css">
-
-
+    <link rel="stylesheet" href="assets\css\style.css">
 </head>
 
 <body>
@@ -24,7 +26,7 @@
 		}
 	?>
 	<?php if($display_navbar_flag === true): ?>
-		<!-- <nav class="navbar navbar-expand-lg navbar-background-home">
+		 <nav class="navbar navbar-expand-lg navbar-background-home">
 			<a class="navbar-brand navbar-brand-home" href="/index.php">SoleGrail's</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarcol"
 				aria-controls="navBarcol" aria-expanded="false" aria-label="Toggle Navbar">
@@ -49,7 +51,7 @@
 					</li>
 				</ul>
 			</div>
-		</nav> -->
+		</nav> 
 	<?php endif; ?>
 
 	<?php if (isset($page_title) && !empty($page_title)): ?>

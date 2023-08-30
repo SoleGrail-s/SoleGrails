@@ -1,0 +1,121 @@
+/*===========================================COMMON CLASSES==============================================*/
+.lora_font{
+  font-family: 'Lora', serif;
+}
+.roboto_font{
+  font-family: 'Roboto', sans-serif;
+}
+  .scrollable-content {
+    max-height: calc(100vh - 90px); /* Adjust the height based on your design */
+    overflow-y: auto;
+  }
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px; /* Set an appropriate height */
+  }
+
+  .navbar-text {
+    font-size: 40px;
+    font-weight: bold; 
+    color: black;
+  }
+  .nav-link-women,
+  .nav-link-men, 
+  .nav-link-features,
+  .nav-link-newarrivals,
+  .nav-link-shoecare,
+  .nav-link-todaysdeals,
+  .nav-link-treading
+  {
+    font-size: 8px; /* Set your desired font size */
+  }
+  .navbar-nav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .navbar-nav .nav-item {
+    margin-right: 50px; /* Adjust the spacing between items */
+  }
+
+  .nav-link {
+    font-size: 15px; /* Set your desired font size */
+    color: black !important; /* Ensure the link color is black */
+    text-decoration: none !important; /* Remove underlines */
+  }
+  .prominent-footer ul {
+      list-style-type: disc; /* Use 'circle' for a hollow bullet */
+      margin-left: 20px; /* Adjust the margin as needed */
+  }
+  .prominent-footer p, h1{
+    padding-left: 20px;
+  }
+
+
+  /*===========================================CATLOG PAGE===============================================*/
+  /* .catlg_pg_product{ */
+  /* checkbox for filter */
+  /* 
+  TRYING OT MAKE CUSTOM CHECK BOX
+  
+  .form-check-input{
+    background-color: #ffffff;
+    border-radius: 2px;
+    cursor: pointer;
+    outline-color: #000000;
+  }
+  input[type="checkbox"]::after{
+    font-family: "Font Awesome 6 Free";
+    content: "\f00c";
+    font-weight: 900;
+    font-size: smaller;
+    color: #000000;
+  }
+  input[type="checkbox"]:hover {
+    background-color: #CD6D00;
+    opacity: 30%;
+  }
+  input[type="checkbox"]:checked {
+    background-color: #ffffff;
+  }
+  input[type="checkbox"]:checked:after {
+    display: block;S
+  } */
+
+  .filter_section{
+    border-radius: 30px;
+  }
+  #year_dropdown{
+    max-height: 200px; 
+    overflow-y: scroll;
+  }
+  .catlg_pg_product_img{
+    width: 100%;
+  }
+  .catlg_pg_product_name{
+    padding-top: 5%;
+    height: 120px;
+    font-family: 'Roboto', sans-serif;
+    
+  }
+  .buy_btn{
+    background-color: #ff8a00;
+    border-radius: 15px;
+    font-size:medium;
+    font-family: 'Roboto', sans-serif;
+    
+    
+  }
+  .addtocart_icon{
+    color: #000000; padding-bottom: 5%;
+  }
+/*=======================================================================================================*/
+
+/*=======================================================================================================*/
+
+
+/*=======================================================================================================*/

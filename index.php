@@ -1,65 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-    .scrollable-content {
-    max-height: calc(100vh - 90px); /* Adjust the height based on your design */
-    overflow-y: auto;
-    }
-  .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90px; /* Set an appropriate height */
-  }
-
-  .navbar-text {
-    font-size: 40px;
-    font-weight: bold; 
-    color: black;
-  }
-  .nav-link-women,
-  .nav-link-men, 
-  .nav-link-features,
-  .nav-link-newarrivals,
-  .nav-link-shoecare,
-  .nav-link-todaysdeals,
-  .nav-link-treading
-  {
-    font-size: 8px; /* Set your desired font size */
-  }
-  .navbar-nav {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .navbar-nav .nav-item {
-    margin-right: 50px; /* Adjust the spacing between items */
-  }
-
-  .nav-link {
-    font-size: 15px; /* Set your desired font size */
-    color: black !important; /* Ensure the link color is black */
-    text-decoration: none !important; /* Remove underlines */
-  }
-  .prominent-footer ul {
-      list-style-type: disc; /* Use 'circle' for a hollow bullet */
-      margin-left: 20px; /* Adjust the margin as needed */
-    }
-  .prominent-footer p, h1{
-    padding-left: 20px;
-  }
 
 
-</style>
-<title>SoleGrail's</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
 <body>
 
 <!--Main Navigation-->
