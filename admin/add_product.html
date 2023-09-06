@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoleGrail's | Customers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Lin to bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- css link  -->
+    <link rel="stylesheet" href="assets\css\style.css">
+
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- ROBOTO -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <!-- LORA -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bundle  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </head>
+  <body class="pb-5">
+        <nav aria-label="breadcrumb lora_font mt-5">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item "><a href="#" >Home</a></li>
+              <li class="breadcrumb-item " aria-current="page"><a href="#" >Products</a></li>
+              <li class="breadcrumb-item " aria-current="page">Add Product</li>
+            </ol> 
+        </nav>
+        <form action="">
+            <div class="card m-5 " style="border-radius: 50px; box-shadow: 10px 10px 50px rgb(129, 129, 129);">
+                <div class=" fw-bold mx-auto d-grid mt-2" style="font-size: 40px; text-decoration: underline solid #D87300 5px; border-bottom: 8px;">
+                    Product Details
+                </div>
+                <div class="row mx-4 pt-5">
+                    <div class="col-md-4">
+                        <p>Product Id:<input type="number" class="border-0" name="product_id" id="product_id"></p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>Added Date:<input type="text" class="border-0" name="added_date" id="added_date"></p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>Modified Date:<input type="text" class="border-0" name="modified_date" id="modified_date"></p>
+                    </div>
+                   
+                </div>
+                <div class="row mx-4 pt-0">
+                    <div class="col-md-8 form-floating gx-4">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Product Name</label>
+                    </div>
+                    <div class="col-md-4 align-content-center gx-4" style="color: #818181;">
+                        <label> <i class="fa-regular fa-circle-info fa-xs"></i>Name should not exceed 20 character</label>
+                    </div>
+                </div>
+                <div class="row m-4 gx-4">
+                    <div class="col-md-2">
+                        <select class="form-select" id="floatingSelect">
+                            <option selected>Brand</option>
+                            <option value="1">Nike</option>
+                            <option value="2">Gucci</option>
+                            <option value="3">Air Jordan</option>
+                            <option value="4">Dior</option>
+                            <option value="5">Adidas</option>
+                            <option value="6">Puma</option>
+                            <option value="7">Reebook</option>
+                            <option value="8">Supreme</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-select" id="floatingSelect">
+                            <option selected>Release Year</option>
+                            <option value="1">2023</option>
+                            <option value="2">2022</option>
+                            <option value="3">2021</option>
+                          </select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-select" id="floatingSelect">
+                            <option selected>Size</option>
+                            <option value="1">13</option>
+                            <option value="2">12.5</option>
+                            <option value="3">12</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <option selected>Gender</option>
+                            <option value="1">Men</option>
+                            <option value="2">Women</option>
+                            <option value="3">Unisex</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <option selected>Type</option>
+                            <option value="1">High</option>
+                            <option value="2">Mid</option>
+                            <option value="3">lows</option>
+                        </select>
+                    </div>
+                    <div class=" col-md-2">
+                        
+                        <input type="text" class=" number">
+                    </div>
+                </div>
+                <div class=" row mx-4 my-2">
+                    <label class="fw-bold ">Description</label>
+                    <textarea class="form-control mx-auto no_resize" placeholder="Leave a comment here" id="floatingTextarea" style="resize: none;"></textarea>
+
+                </div>
+                <div class="row mx-4 mb-5 mt-2">
+                    <label class="fw-bold">Images</label>
+                    <div class="col-md-4 g-4">
+                        <label>Left Profile</label>
+                        <input type="file" class="form-control col-md-2" id="inputGroupFile01">
+                    </div >
+                    <div class="col-md-4 g-4">
+                        <label>Right Profile</label>
+                        <input type="file" class="form-control col-md-2" id="inputGroupFile01">
+                    </div >
+                    <div class="col-md-4 g-4">
+                        <label>Top Profile</label>
+                        <input type="file" class="form-control col-md-2" id="inputGroupFile01">
+                    </div>
+                    <div class="col-md-4 g-4">
+                        <label>Full Profile</label>
+                        <input type="file" class="form-control col-md-2" id="inputGroupFile01">
+                    </div>
+                    <div class="col-md-4 g-4">
+                        <label>Sole</label>
+                        <input type="file" class="form-control col-md-2" id="inputGroupFile01">
+                    </div>
+                </div>
+                <div class="position-relative mb-5">
+                    <button type="button" class="btn btn-warning position-absolute bottom-0 end-0 mx-4 buy_btn">Confirm</button>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
