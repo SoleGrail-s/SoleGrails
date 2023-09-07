@@ -54,6 +54,10 @@
   .prominent-footer p, h1{
     padding-left: 20px;
   }
+.no_resize{
+  resize: none;
+}
+/*===============================================LOGIN===================================================*/
 
 
   /*===========================================CATLOG PAGE===============================================*/
@@ -106,16 +110,27 @@
     background-color: #ff8a00;
     border-radius: 15px;
     font-size:medium;
-    font-family: 'Roboto', sans-serif;
-    
-    
+    font-family: 'Roboto', sans-serif; 
   }
   .addtocart_icon{
     color: #000000; padding-bottom: 5%;
   }
+<<<<<<< HEAD
 /*====login page===================================================================================================*/
 
 
+=======
+/*==========================================Admin View products=========================================*/
+.breadcrumb-item{
+  font-family: 'Lora', serif;
+}
+.add_btn{
+  border-radius: 20px;
+}
+.td_image{
+  max-height: fit-content;
+}
+>>>>>>> 1b5564033e8222c61497166f24ee3284ef2f9c94
 
 /*=======================================================================================================*/
 
