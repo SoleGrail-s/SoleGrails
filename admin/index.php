@@ -1,1 +1,66 @@
+<?php
+require_once($_SERVER["DOCUMENT_ROOT"]."/includes/init.php");
+?>
 
+<!-- <div class="container px-4 text-center ">
+<img src="admin\user_default.jpg" height="100px" width="100px">
+    <div class="card">
+        <div class="row gx-3">
+            <div class="col-md-6 px-3 mt-3">
+                <p>hi</p>
+            </div>
+            <div class="col-md-6 px-3 mt-3">
+                <p >hello</p>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="card m-5 border-1" style="border-radius: 100px;  background-color: #ffd9007b; box-shadow: 5px 5px 15px #818181; border: 1px solid #D87300;" >
+      <div class="float-start p-3 ">
+        <img src="https://th.bing.com/th/id/OIP.Sr4fxChDzgG6T-SG4zCS8wHaHa?pid=ImgDet&rs=1" class="float-start mx-auto" alt="..." style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #D87300;">
+        <label class="ms-5 mx-auto my-4 fw-bold " style="vertical-align: middle ; font-family: 'Lora', sans-serif; font-size: 30px;">Welcome, Admin Name</label>        
+      </div>
+    </div>
+    <!-- <div class="card m-5 border-0" >
+      <div class=""  style="border-radius: 100px;  background-color: #ffd9007b; box-shadow: 5px 5px 15px #818181; border: 1px solid #D87300;" >
+        <div class=" p-3 mx-auto">
+          <img src="https://th.bing.com/th/id/OIP.Sr4fxChDzgG6T-SG4zCS8wHaHa?pid=ImgDet&rs=1" class="float-start" alt="..." style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #D87300;">
+        </div>
+        <div class=" gb-5">
+          <label class="pt-3 px-5 fw-bold" style="font-family: 'Lora', sans-serif; font-size: 20px;">Welcome,</label>
+          <label for="" class="px-5 fw-bolder"  style="font-family: 'Lora', sans-serif; font-size: 30px;"> Customer Customer</label>
+        </div>
+        <div class=""></div>
+        
+      </div>  
+    </div> -->
+    <div class="card mx-5 border-1" style="border-radius: 20px; box-shadow: 10px 5px 1px #ffd900; border-color: #D87300;">
+        <div class="row align-middle mx-5 mt-3">
+            <div class="col p-3" >
+                <input type="submit" class="btn btn-lg  m-auto fw-bold" style="display: flex; background-color: #d87300a3; color: #000000;" value="Inventory"></input>
+            </div>
+            <div class="col p-3">
+                <button type="button" class="btn btn-lg  m-auto fw-bold" style="display: flex; ; background-color: #d87300a3; color: #000000;">View Customers</button>
+            </div>
+            <div class="col p-3">
+                <button type="button" class="btn btn-lg  m-auto fw-bold" style="display: flex; ; background-color: #d87300a3; color: #000000;">Bidder verification</button>
+            </div>
+        </div>
+        <div class="row align-middle mx-5">
+            <div class="col p-3">
+                <button type="button" class="btn btn-lg  m-auto fw-bold" style="display: flex; ; background-color: #d87300a3; color: #000000;">Add fields</button>
+            </div>
+            <div class="col p-3">
+                <button type="button" href="admin\add_product.html" class="btn btn-lg  m-auto fw-bold" style="display: flex; ; background-color: #d87300a3; color: #000000;">Add product</button>
+            </div>
+            <div class="col p-3">
+                <button type="button" class="btn btn-lg  m-auto fw-bold" style="display: flex; ; background-color: #d87300a3; color: #000000;">Transaction Monitoring</button>
+            </div>
+        </div> 
+        <div class="p-3 mb-3">
+            <button type="button" class="btn btn-lg  m-auto fw-bold" style="display: flex; ; background-color: #d87300a3; color: #000000;">Feedback</button>
+        </div> 
+    </div>
+  </body>
+</html>
