@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- css link  -->
-    <link rel="stylesheet" href="assets\css\style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 
 
     <!-- Google fonts -->
@@ -40,41 +39,54 @@
 
 </head>
 
-<body>
+<body class="roboto_font login_body">
+    <!-- <img src="/assets/img/404614.jpg" alt=""> -->
     <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <div class="container">
-                    <h2 class="text-center">Login </h2>
-                    <form method="post" action="login.php">
-                        <div class="card">
-                            <div class="row">
-                                <input class="border-start border-top border-end" type="text" id="username"
-                                    name="username" placeholder="Username" required><br><br>
-                                <input class="border-start border-top border-end" type="text" type="password"
-                                    id="password" name="password" placeholder="Password" required><br><br>
-                            </div>
-
-                        </div>
-
-                        <br>
-                        <div class="position-relative">
-                            <div class="position-absolute top-0 start-50 translate-middle"><button class="btn btn-dark "
-                                    type="submit">Login</button></div>
-                        </div>
-
-
-
-                        <br><br>Don't have any account? <button class="btn btn-warning btn-sm" type="submit">Signup</button>
-
-                    </form>
+        <img src="/assets/img/404614.jpg" class="" alt="">
+        <h2 class="text-center fw-bolder login_txt card-img-overlay" >Login</h2>
+        <form method="post" action="login.php" >
+            <div class="card m-5 text-center mx-auto card-img-overlay" id="logincard">
+                <div class="row mx-5 my-3">
+                    <input class="mt-3 login_fields" type="text" id="username"
+                        name="username" placeholder="Username" required>
+                    <input class="my-4 login_fields" type="password"
+                        id="password" name="password" placeholder="Password" required>
+                    <button class="btn btn-dark mx-auto d-grid" id="login_btn" type="submit">Login</button>
                 </div>
-
             </div>
-
+        </form>
+        <div class=" text-center card-img-overlay mb-4">
+            <p class="fw-bolder">
+                Don't have an account?
+                <button class=" btn-warning btn-sm fw-bolder" id="signup_btn" type="submit">Sign Up</button>
+            </p>
         </div>
     </div>
-    </div>
+    <!-- <div class="my-3">
+        <img src="/assets/img/orange triangle.png" alt="" class="float-start">
+        <img src="/assets/img/yellow triangle.png" alt="" class="float-end"> -->
+        <!-- <h2 class="text-center fw-bolder login_txt " >Login</h2>
+        <div class="container">
+                
+                <form method="post" action="login.php" >
+                    <div class="card m-5 text-center mx-auto" id="logincard">
+                        <div class="row px-5 my-3">
+                            <input class="mt-3 login_fields" type="text" id="username"
+                                name="username" placeholder="Username" required>
+                            <input class="my-4 login_fields" type="password"
+                                id="password" name="password" placeholder="Password" required>
+                            <button class="btn btn-dark mx-auto d-grid" id="login_btn" type="submit">Login</button>
+                        </div>
+                    </div>
+                </form> -->
+            <!-- <div class=" text-center" style="position: relative;">
+                <p class="fw-bolder">
+                    Don't have an account?
+                    <button class=" btn-warning btn-sm fw-bolder" id="signup_btn" type="submit">Sign Up</button>
+                </p>
+            </div> -->
+        <!-- </div>
+    </div> -->
+    
 </body>
-
 </html>

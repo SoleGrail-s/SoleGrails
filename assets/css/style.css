@@ -58,7 +58,47 @@
   resize: none;
 }
 /*===============================================LOGIN===================================================*/
-
+.login_body{
+  /* background-image: url(/assets/img/404614.jpg); */
+  
+  /* background: linear-gradient(to right bottom,orange, yellow,rgb(207, 119, 36),rgb(243, 148, 23)); */
+}
+#logincard{
+  border-radius: 20px;
+  background-color: #d8730023;
+  border: none;
+  max-width: 500px; 
+  text-align: center;
+  min-height: 150px;
+  
+}
+.login_txt{
+  text-decoration: underline;
+  text-decoration-color:  #FFD700 ;
+  text-decoration-thickness: 5px;
+}
+.login_fields{
+  border-color: transparent;
+  border-top: 0px;
+  border-bottom: 5px solid #D87300;
+  background: transparent;
+}
+#login_btn{
+  border-radius: 60px;
+  width: fit-content;
+  
+  align-items: center;
+  /* position: absolute;
+  top: 90%;
+  left: 50%; */
+  /* -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+}
+#signup_btn{
+  border-radius: 30px;
+  width: 100px;
+  background-color: #FF8A00;
+}
 
   /*===========================================CATLOG PAGE===============================================*/
   /* .catlg_pg_product{ */
