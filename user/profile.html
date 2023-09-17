@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SoleGrail's</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Lin to bootstrap css -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <!-- css link  -->
+        <link rel="stylesheet" href="assets\css\style.css">
+
+
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- ROBOTO -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+            rel="stylesheet">
+        <!-- LORA -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+            rel="stylesheet">
+
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- Bundle  -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <div class="container ">
+            <div class="card m-5" style="min-height: 120px; border-radius: 30px;">
+                <div class="row">
+                    <div class="col-md-4 position-relative">
+                        <h2 class="position-absolute top-50 start-50 translate-middle fw-bold">Hi,Customer Name</h2>
+                    </div>
+                    <div class="col-md-4 position-relative">
+                        
+                        <p class="position-absolute top-50 start-50 translate-middle fw-bold">Your Orders</p>
+                        <p class="position-absolute top-50 start-50 translate-middle fw-bold">10</p>
+                    </div>
+                    <div class="col-md-4 position-relative">
+                        <p class="position-absolute top-50 start-50 translate-middle fw-bold">Your SoleMates</p>
+                        <p>25</p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="tabcontainer">
+                <button>Basic Details</button>
+                <button>Contact Details</button>
+                <button>Shipping Address</button>
+                <button>Reset Password</button>
+                <button>Update Profile</button>
+            </div> -->
+            <!-- Tabs navs -->
+            <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="ex1-tab-1" data-mdb-toggle="tab" onclick="showcontent" role="tab">Tab 1</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="ex1-tab-2" data-mdb-toggle="tab" onclick="showcontent" role="tab">Tab 2</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="ex1-tab-3" data-mdb-toggle="tab" href="#ex1-tabs-3" role="tab">Tab 3</a>
+                </li>
+            </ul>
+            <!-- Tabs navs -->
+            
+            <!-- Tabs content -->
+            <div class="tab-content" id="ex1-content">
+                <div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel">
+                Tab 1 content
+                </div>
+                <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" >
+                Tab 2 content
+                </div>
+                <div class="tab-pane fade" id="ex1-tabs-3" role="tabpanel" >
+                Tab 3 content
+                </div>
+            </div>
+  <!-- Tabs content -->
+        </div>
+        <!-- <br>
+        <div style="margin-left: 60px;">
+            <span>Basic details</span>
+            <span style="margin-left: 10px;">Contact Details</span>
+            <span style="margin-left: 10px;">Shipping Address</span>
+            <span style="margin-left: 10px;">Reset Password</span>
+            <span style="margin-left: 40px;"><button type="button" class="btn btn-warning">Update Profile</button></span>
+        </div>
+        <br>
+        <ul class="nav nav-tabs tabcontainer">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Active</a>
+                  
+                </li>
+                <a class="tab-content" aria-current="page" href="#">Active</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+                <li class="tab-content">
+                    <button>pdate Profile</button>
+                </li>
+            </ul>
+        <div style="margin-left: 60px;">
+            <span>First Name</span>
+            <span style="margin-left: 135px;">Middle Name</span>
+            <span style="margin-left: 115px;">Last Name</span>
+        </div>
+        <span>
+            <input type="border" style="margin-left: 60px;" type="text" id="fn" name="Fisrt Name" placeholder="" required>
+        
+            <input type="border" style="margin-left: 20px;" type="text" id="mn" name="Middle Name" placeholder="" required>
+        
+            <input type="border" style="margin-left: 20px;" type="text" id="ln" name="Last Name" placeholder="" required>
+        </span>
+        
+        <br><br>
+        <div style="margin-left: 60px;">
+            <span>Date of Birth</span>
+            <span style="margin-left: 200px;">Gender</span>
+        </div>
+        
+        <span>
+            <input type="border" style="margin-left: 60px;" type="date" id="dob" name="Date of Birth" placeholder="" required>
+        
+            <input type="border" style="margin-left: 100px;" type="text" id="g" name="Gender" placeholder="" required>
+        </span>
+        
+        <br><br>
+        <div style="margin-left: 60px;">
+            <span>Basic details</span>
+            <span style="margin-left: 10px;">Contact Details</span>
+            <span style="margin-left: 10px;">Shipping Address</span>
+            <span style="margin-left: 10px;">Reset Password</span>
+            <span style="margin-left: 40px;"><button type="button" class="btn btn-warning">Upadte Profile</button></span>
+        </div>
+        
+        <br>
+        <div style="margin-left: 60px;">
+            <span>Phone Number</span>
+            <span style="margin-left: 182px;">Alternative Number</span>
+        </div>
+        
+        <span>
+            <input type="border" style="margin-left: 60px;" type="number" id="pn" name="Phone no" placeholder="" required>
+        
+            <input type="border" style="margin-left: 100px;" type="number" id="an" name="Alternative no" placeholder=""
+                required>
+        </span>
+        
+        <br><br>
+        <div style="margin-left: 60px;">
+            <span>Email-id</span>
+        </div>
+        
+        <span>
+            <input type="text" style="margin-left: 60px;">
+        </span>
+        
+        <br><br>
+        <div style="margin-left: 60px;">
+            <span>Basic details</span>
+            <span style="margin-left: 10px;">Contact Details</span>
+            <span style="margin-left: 10px;">Shipping Address</span>
+            <span style="margin-left: 10px;">Reset Password</span>
+            <span style="margin-left: 40px;"><button type="button" class="btn btn-warning">Upadte Profile</button></span>
+        </div>
+        
+        <br>
+        <div style="margin-left: 60px;">
+            <span>Address</span>
+        </div>
+        
+        <span>
+            <input type="text" style="margin-left: 60px;">
+        </span>
+        
+        <br><br>
+        <div style="margin-left: 60px;">
+            <span>Area/Locality</span>
+            <span style="margin-left: 200px;">Landmark</span>
+        </div>
+        
+        
+        <span>
+            <input type="border" style="margin-left: 60px;" type="text" id="al" name="area/locality" placeholder="" required>
+        
+            <input type="border" style="margin-left: 100px;" type="text" id="l" name="landmark" placeholder="" required>
+        
+        </span>
+        
+        <br><br>
+        <div style="margin-left: 60px;">
+            <span>City/Town</span>
+            <span style="margin-left: 220px;">District</span>
+        </div>
+        
+        
+        <span>
+            <input type="border" style="margin-left: 60px;" type="text" id="ct" name="city/town" placeholder="" required>
+        
+            <input type="border" style="margin-left: 100px;" type="text" id="d" name="district" placeholder="" required>
+        
+        </span>
+        
+        <br><br>
+        <div style="margin-left: 60px;">
+            <span>State</span>
+            <span style="margin-left: 255px;">Postal-code</span>
+        </div>
+        
+        
+        <span>
+            <input type="border" style="margin-left: 60px;" type="text" id="s" name="state" placeholder="" required>
+        
+            <input type="border" style="margin-left: 100px;" type="number" id="ps" name="postal-code" placeholder="" required>
+        
+        </span>
+        
+        
+        <br><br>
+        <div style="margin-left: 60px;">
+            <span>Basic details</span>
+            <span style="margin-left: 10px;">Contact Details</span>
+            <span style="margin-left: 10px;">Shipping Address</span>
+            <span style="margin-left: 10px;">Reset Password</span>
+            <span style="margin-left: 40px;"><button type="button" class="btn btn-warning">Reset Password</button></span>
+        </div>
+        
+        <br>
+        <div style="margin-left: 60px;">
+            <span>New Password</span>
+            <span style="margin-left: 190px;">Confirm Password</span>
+        </div>
+        
+        
+        <span>
+            <input type="border" style="margin-left: 60px;" type="password" id="np" name="new pass" placeholder="" required>
+        
+            <input type="border" style="margin-left: 100px;" type="password" id="cp" name="c pass" placeholder="" required>
+        
+        </span> -->
+    </body>
+</html>
+    
+

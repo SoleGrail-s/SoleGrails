@@ -45,7 +45,7 @@
                   </tr>
                 </tbody>
               </table>
-              <img src="assets\img\artem-bondarchuk-XPBYi4K8vFI-unsplash.jpg" class="img-fluid img-thumbnail mx-auto d-block" alt="product image" height="100px" width="100px">
+              <img src="/assets/img/artem-bondarchuk-XPBYi4K8vFI-unsplash.jpg" class="img-fluid img-thumbnail mx-auto d-block" alt="product image" height="100px" width="100px">
         </div>
     </div>
   </body>

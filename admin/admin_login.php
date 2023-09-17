@@ -17,6 +17,7 @@ if(isset($_POST['login'])){
         $fetch_admin_id = $select_admin->fetch(PDO::FETCH_ASSOC);
         $_SESSION['admin_id'] = $fetch_admin_id['id'];
         $message[] = 'Login Worked!';
+        // header('location:admin_panel.html');
     }else{
         $message[] = 'Incorrect Username/Password';
     }
@@ -103,9 +104,9 @@ if(isset($_POST['login'])){
                     ';
                 }
             }
-        ?>
+        ?> 
         <h2 class="mx-auto">Admin Login</h2>
-        <form action="/action_page.php" method="post">
+        <form action="" method="POST">
           <div class="container">
             <label for="uname"><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="uname" oninput="this.value = this.value.replace(/\s/g, '')" required>
