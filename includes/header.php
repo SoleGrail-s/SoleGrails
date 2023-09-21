@@ -86,27 +86,24 @@
 			</ul>
          </div>
 	</nav> -->
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Logo</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>    
-      </ul>
-    </div>
-  </div>
-</nav>
+		<nav class="navbar navbar-expand-sm primary_navbar navbar-dark">
+  			<div class="container-fluid">
+    			<h3 class="lora_font fw-bolder brand_name ms-4">SoleGrails's</h3>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+    			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+      				<ul class="navbar-nav ms-auto roboto_font me-4">
+						<li class="nav-item">
+							<a class="nav-link text-dark" href="/login/login">Login</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" href="/registration/index">Registration</a>
+						</li>  
+      				</ul>
+    			</div>
+  			</div>
+		</nav>
 		 <!-- <nav class="navbar navbar-expand-lg navbar-background-home">
 			<a class="navbar-brand navbar-brand-home" href="/index.php">SoleGrail's</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarcol"
@@ -132,8 +129,20 @@
 					</li>
 				</ul>
 			</div>
-		</nav> 
-	<?php endif; ?> -->
+		</nav> -->
+	<?php endif; ?>
+	<?php if($page_title === 'Login' || $page_title === 'Registration'): ?>
+        <nav class="navbar navbar-expand-sm primary_navbar ">
+            <div class="container-fluid">
+                <a class="ms-3 navbar-brand" href="/index.php">
+                    <h3 class="lora_font fw-bolder brand_name ms-4">SoleGrails's</h3>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    <?php endif; ?>
 
 	<?php if (isset($page_title) && !empty($page_title)): ?>
 		<link rel="stylesheet" href="/assets/css/navbar.css">

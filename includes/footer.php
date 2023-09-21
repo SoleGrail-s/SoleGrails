@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <!-- <div>  -->
-=======
-<div> 
->>>>>>> 9a0859e03adeb2e073d40db7da7cba9a01dbf396
       <!-- Footer -->
       <footer class="text-center text-lg-start text-white" style="background-color: #000000ee">
         <!-- Section: Social media -->
@@ -111,11 +107,7 @@
         <!-- Copyright -->
       </footer>
       <!-- Footer -->
-<<<<<<< HEAD
     <!-- </div> -->
-=======
-    </div>
->>>>>>> 9a0859e03adeb2e073d40db7da7cba9a01dbf396
     <!-- End of .container -->
   </body>
 </html>

@@ -11,7 +11,7 @@
 .txt_dec{
   color: #000000;
 
-  text-decoration: none !importa;
+  text-decoration: none !important;
 }
 .black{
   color: #000000;
@@ -35,8 +35,6 @@
 .primary_navbar{
   /* background-color: #C2C2C2; */
   background-image: radial-gradient(closest-corner at 50% 50%, #ffffff 1%, #818181 );
- 
-  max-height: 75px;
 }
 
 .brand_name{
@@ -156,7 +154,6 @@
 .login_body{
   /* background-image: url(/assets/img/404614.jpg); */
   
-<<<<<<< HEAD
   /* background: radial-gradient(#FFD700, #D87300); */
 }
 /* .login_section{
@@ -173,18 +170,6 @@
   /* backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px); */
   box-shadow: 1px 1px 20px #000000 ;
-=======
-  /* background: linear-gradient(to right bottom,orange, yellow,rgb(207, 119, 36),rgb(243, 148, 23)); */
-}
-#logincard{
-  border-radius: 20px;
-  background-color: #d8730023;
-  border: none;
-  max-width: 500px; 
-  text-align: center;
-  min-height: 150px;
-  
->>>>>>> 9a0859e03adeb2e073d40db7da7cba9a01dbf396
 }
 .login_txt{
   text-decoration: underline;
@@ -200,10 +185,6 @@
 #login_btn{
   border-radius: 60px;
   width: fit-content;
-<<<<<<< HEAD
-=======
-  
->>>>>>> 9a0859e03adeb2e073d40db7da7cba9a01dbf396
   align-items: center;
   /* position: absolute;
   top: 90%;
@@ -216,7 +197,6 @@
   width: 100px;
   background-color: #FF8A00;
 }
-<<<<<<< HEAD
  /*===========================================Registeration==============================================*/
  .register_body{
   background-image: url(/assets/img/website_pics/body1.jpg);
@@ -260,9 +240,6 @@
   background-color: #FFD700;
   border: 10px solid #000000;
 }
-=======
-
->>>>>>> 9a0859e03adeb2e073d40db7da7cba9a01dbf396
   /*===========================================CATLOG PAGE===============================================*/
   /* .catlg_pg_product{ */
   /* checkbox for filter */

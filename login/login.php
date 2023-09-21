@@ -1,7 +1,11 @@
 <?php
-  require_once($_SERVER["DOCUMENT_ROOT"]."/includes/init.php");
+    $page_title = "Login";
+    $display_navbar_flag = false;
+    require_once($_SERVER["DOCUMENT_ROOT"]."/includes/init.php");
 ?>
-<div class="roboto_font login_body login_body">
+
+<div class="container">
+    <div class="roboto_font login_body">
   
 <!-- <img src="/assets/img/404614.jpg" alt="" > -->
     <!--  -->
@@ -9,7 +13,7 @@
         <!-- <img src="/assets/img/website_pics/hpic_1.png" class="" alt=""> -->
         <h2 class="text-center fw-bolder login_txt " >Login</h2>
         <form method="post" action="login.php" >
-            <div class="card mt-5 mx-4 mb-5 text-center mx-sm-auto " id="logincard">
+            <div class="card mt-5 mx-4 mb-5 text-center mx-sm-auto card-img-overlay" id="logincard">
                 <div class="row mx-5 my-3">
                     <input class="mt-5 login_fields" type="text" id="username"
                         name="username" placeholder="Username" required>
@@ -27,7 +31,4 @@
         </div>
     </div>
 </div>
-
-<?php
-  require_once($_SERVER["DOCUMENT_ROOT"]."/includes/footer.php");
-?>
+</div>
