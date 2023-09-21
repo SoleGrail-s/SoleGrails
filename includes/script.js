@@ -1,1 +1,0 @@
-var tabbuttons = document.querySelectorAll(".nav .nav-tabs ")

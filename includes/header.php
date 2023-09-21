@@ -14,14 +14,18 @@
 	<?php endif; ?>
 	<title>SoleGrail's</title>
     
+		<!-- css link  -->
+	<link rel="stylesheet" href="/assets/css/style.css">
+
+	 <!-- js link  -->
+	 <link rel="stylesheet" href="/assets/js/script.js">
     
 	<!-- Lin to bootstrap css -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
-	<!-- css link  -->
-	<link rel="stylesheet" href="/assets/css/style.css">
+   
 
+	
 
 	<!-- Google fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,7 +56,58 @@
 		}
 	?>
 	<?php if($display_navbar_flag === true): ?>
-		 <nav class="navbar navbar-expand-lg navbar-background-home">
+		<!-- <nav class="navbar navbar-expand-sm  primary_navbar" >
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarcol">
+                    <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="nav justify-content-start pe-0" style="position: fixed; left: 2%;">
+              <li class="nav-item">
+                <a class="nav-link active fw-bolder lora_font" aria-current="page" href="#" style="font-size: 15px; ">HOME</a>
+              </li>
+            </ul>
+          
+            <div class="row text-center mx-auto border-bottom-3" >
+                <h3 class="lora_font fw-bolder brand_name" >SoleGrail's</h3>
+                <div class="col-3 white_r  brand_r pe-3 " ></div>
+                <div class="col-3 black_r  brand_r pe-3"></div>
+                <div class="col-3 orange_r  brand_r pe-3"></div>
+                <div class="col-3 yellow_r  brand_r pe-3"></div>
+            </div>
+
+			
+			<div class="ms-5 collapse navbar-collapse" id="navBarcol" style="position: fixed; right: 2%;">
+          <ul class="nav justify-content-end roboto_font ">
+            <li class="nav-item me-0">
+              <a class="nav-link active" aria-current="page" href="#">Log In</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="#">Register</a>
+            </li>
+			</ul>
+         </div>
+	</nav> -->
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>    
+      </ul>
+    </div>
+  </div>
+</nav>
+		 <!-- <nav class="navbar navbar-expand-lg navbar-background-home">
 			<a class="navbar-brand navbar-brand-home" href="/index.php">SoleGrail's</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarcol"
 				aria-controls="navBarcol" aria-expanded="false" aria-label="Toggle Navbar">
@@ -78,7 +133,7 @@
 				</ul>
 			</div>
 		</nav> 
-	<?php endif; ?>
+	<?php endif; ?> -->
 
 	<?php if (isset($page_title) && !empty($page_title)): ?>
 		<link rel="stylesheet" href="/assets/css/navbar.css">
@@ -88,6 +143,6 @@
 
 <style>
 	.home-nav-item:hover{
-		background-color: #1363df;
+		background-color: ;
 	}
 </style>

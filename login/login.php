@@ -1,60 +1,33 @@
-
-<<<<<<< HEAD
-=======
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"]."/includes/init.php");
+  require_once($_SERVER["DOCUMENT_ROOT"]."/includes/init.php");
 ?>
-<form class="card col-md-4 offset-md-4">
-  <!-- Email input -->
-  <div class=" col-md-8  form-outline m-4 ">
-    <input type="email" id="form2Example1" class="form-control" />
-    <label class="form-label" for="form2Example1">Email address</label>
-  </div>
-
-  <!-- Password input -->
-  <div class=" col-md-8 form-outline m-4">
-    <input type="password" id="form2Example2" class="form-control" />
-    <label class="form-label" for="form2Example2">Password</label>
-  </div>
-
-  <!-- 2 column grid layout for inline styling -->
-  <div class="row mb-4">
-    <div class="col d-flex justify-content-center">
-      <!-- Checkbox -->
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-        <label class="form-check-label" for="form2Example31"> Remember me </label>
-      </div>
+<div class="roboto_font login_body login_body">
+  
+<!-- <img src="/assets/img/404614.jpg" alt="" > -->
+    <!--  -->
+    <div class=" login_section mt-5">
+        <!-- <img src="/assets/img/website_pics/hpic_1.png" class="" alt=""> -->
+        <h2 class="text-center fw-bolder login_txt " >Login</h2>
+        <form method="post" action="login.php" >
+            <div class="card mt-5 mx-4 mb-5 text-center mx-sm-auto " id="logincard">
+                <div class="row mx-5 my-3">
+                    <input class="mt-5 login_fields" type="text" id="username"
+                        name="username" placeholder="Username" required>
+                    <input class="my-5 login_fields" type="password"
+                        id="password" name="password" placeholder="Password" required>
+                    <button class="btn btn-dark mx-auto d-grid " id="login_btn" type="submit">Login</button>
+                </div>
+            </div>
+        </form>
+        <div class=" text-center  mb-4">
+            <p class="fw-bolder">
+                Don't have an account?
+                <button class=" btn-warning btn-sm fw-bolder border-0" id="signup_btn" type="submit">Sign Up</button>
+            </p>
+        </div>
     </div>
+</div>
 
-    <div class="col">
-      <!-- Simple link -->
-      <a href="#!">Forgot password?</a>
-    </div>
-  </div>
-
-  <!-- Submit button -->
-  <button type="button" class="btn btn-primary  col-md-8btn-block mb-4">Sign in</button>
-
-  <!-- Register buttons -->
-  <div class="text-center">
-    <p>Not a member? <a href="#!">Register</a></p>
-    <p>or sign up with:</p>
-    <button type="button" class="btn btn-link btn-floating mx-1">
-      <i class="fab fa-facebook-f"></i>
-    </button>
-
-    <button type="button" class="btn btn-link btn-floating mx-1">
-      <i class="fab fa-google"></i>
-    </button>
-
-    <button type="button" class="btn btn-link btn-floating mx-1">
-      <i class="fab fa-twitter"></i>
-    </button>
-
-    <button type="button" class="btn btn-link btn-floating mx-1">
-      <i class="fab fa-github"></i>
-    </button>
-  </div>
-</form>
->>>>>>> 1b5564033e8222c61497166f24ee3284ef2f9c94
+<?php
+  require_once($_SERVER["DOCUMENT_ROOT"]."/includes/footer.php");
+?>
