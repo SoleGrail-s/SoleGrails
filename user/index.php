@@ -1,6 +1,7 @@
 <?php
     require_once($_SERVER["DOCUMENT_ROOT"]."/includes/init.php");
 ?>
+<<<<<<< HEAD
 <body class="roboto_font user_profile_body" >
         <div class="container ">
             <div class="card m-5" style="min-height: 120px; border-radius: 30px;">
@@ -192,6 +193,9 @@
                   </div>
              </div>
         </div>
+=======
+
+>>>>>>> 9a0859e03adeb2e073d40db7da7cba9a01dbf396
 <?php
     require_once($_SERVER["DOCUMENT_ROOT"]."/includes/footer.php");
 ?>
