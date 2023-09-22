@@ -1,76 +1,201 @@
-/*===========================================COMMON CLASSES==============================================*/
+/*==========================================COMMON CLASSES=============================================*/
 .lora_font{
   font-family: 'Lora', serif;
 }
 .roboto_font{
   font-family: 'Roboto', sans-serif;
 }
-  .scrollable-content {
-    max-height: calc(100vh - 90px); /* Adjust the height based on your design */
-    overflow-y: auto;
-  }
-  .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90px; /* Set an appropriate height */
-  }
+.new_rocker{
+  font-family: 'New Rocker',sans-serif;
+}
+.txt_dec{
+  color: #000000;
+  text-decoration: none !important;
+}
+.txt_dec:hover{
+  color: #000000;
+  text-decoration: none !important;
+}
+.expl_btn{
+  color: #ffffff;
+  text-decoration: none !important;
+}
+.expl_btn:hover{
+  color: #ffffff;
+  text-decoration: none !important;
+}
+.no_outline:focus{
+ outline: none;
+}
+.black{
+  color: #000000;
+ } 
+ /* register placeholder  */
+::placeholder,.register_placeholder {
+  color: #ffffff;
+  opacity: 1; /* Firefox */
+}
 
-  .navbar-text {
-    font-size: 40px;
-    font-weight: bold; 
-    color: black;
-  }
-  .nav-link-women,
-  .nav-link-men, 
-  .nav-link-features,
-  .nav-link-newarrivals,
-  .nav-link-shoecare,
-  .nav-link-todaysdeals,
-  .nav-link-treading
-  {
-    font-size: 8px; /* Set your desired font size */
-  }
-  .navbar-nav {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
+:-ms-input-placeholder,.register_placeholder { /* Internet Explorer 10-11 */
+ color: #ffffff;
+}
 
-  .navbar-nav .nav-item {
-    margin-right: 50px; /* Adjust the spacing between items */
-  }
+::-ms-input-placeholder,.register_placeholder { /* Microsoft Edge */
+ color: #ffffff;
+}
+/* login placeholder */
+::placeholder,.login_placeholder {
+  color: #000000;
+  opacity: 1; /* Firefox */
+}
 
-  .nav-link {
-    font-size: 15px; /* Set your desired font size */
-    color: black !important; /* Ensure the link color is black */
-    text-decoration: none !important; /* Remove underlines */
-  }
-  .prominent-footer ul {
-      list-style-type: disc; /* Use 'circle' for a hollow bullet */
-      margin-left: 20px; /* Adjust the margin as needed */
-  }
-  .prominent-footer p, h1{
-    padding-left: 20px;
-  }
+:-ms-input-placeholder,.login_placeholder { /* Internet Explorer 10-11 */
+ color: #000000;
+}
+
+::-ms-input-placeholder,.login_placeholder { /* Microsoft Edge */
+ color: #000000;
+}
 .no_resize{
   resize: none;
+}
+/* primarynavbar */
+.primary_navbar{
+  background-color: #c2c2c2;
+  height: 55px;
+  /* background-image: radial-gradient(closest-corner at 50% 50%, #ffffff 1%, #818181 ); */
+}
+
+.brand_name{
+  /* margin-right: 20px; */
+  font-size: 30px;
+  z-index: 10;
+  color: #000000;
+  text-shadow: #ffffff 2px 2px 40px;
+  /* text-decoration: underline 3px; */
+}
+.white_r::after,
+.white_r::before,
+.black_r::after,
+.black_r::before,
+.orange_r::after,
+.orange_r::before,
+.yellow_r::after,
+.yellow_r::before{
+  position: absolute;
+  content: '';
+  width: 70px;
+  height: 55px;
+  transform: skew(-50deg);
+  /* gap: 100px; */
+  top: 0px;
+  
+}
+.white_r::after,
+.white_r::before{
+  background: #ffffff;
+  
+}
+.black_r::after,
+.black_r::before{
+  background: #22222222;
+}
+.orange_r::after,
+.orange_r::before{
+  background: #D87300;
+}
+
+.yellow_r::after,
+.yellow_r::before{
+  background: #FFD700;
+}
+.box_shadow{
+  box-shadow: #818181 1px 1px 10px;
+}
+/* secondary navbar */
+
+/*===========================================Landing page============================================*/
+.shop_now{
+  
+} 
+.solemate{
+  /* position: absolute; */
+  /* top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size:larger; */
+  color: #070707; 
+  /* text-shadow: #ffffff 2px 2px 80px; */
+}
+.shop_now_section{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  font-size: larger;
+
+  /* align-items: center;  */
+}
+.landingpage_pic{
+  /* background-image: url(); */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Custom CSS for overlay */
+.overlay {
+  position: relative;
+}
+.overlay-content {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+.overlay-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+/* Set a minimum height for the image on small screens */
+@media (max-width: 1200px) {
+  .overlay img {
+    min-height: 500px;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+#img_1_landing{
+  /* background-image: url(); */
+  /* display: block;
+ 
+  max-width: 100%; */
+  /* height: auto; */
+
 }
 /*===============================================LOGIN===================================================*/
 .login_body{
   /* background-image: url(/assets/img/404614.jpg); */
   
-  /* background: linear-gradient(to right bottom,orange, yellow,rgb(207, 119, 36),rgb(243, 148, 23)); */
+  background: radial-gradient(#ffd9004d, #d8730057);
 }
+/* .login_section{
+  
+} */
 #logincard{
   border-radius: 20px;
-  background-color: #d8730023;
-  border: none;
+  background-color: #d8730027;
+  /* background: linear-gradient(135deg, rgb(216, 115, 0, 0.1), rgb(255, 217, 0,0)); */
+  border: 5px solid rgb(216, 115, 0, 0.5);
   max-width: 500px; 
   text-align: center;
   min-height: 150px;
-  
+  /* backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); */
+  box-shadow: 1px 1px 20px #000000 ;
 }
 .login_txt{
   text-decoration: underline;
@@ -86,7 +211,6 @@
 #login_btn{
   border-radius: 60px;
   width: fit-content;
-  
   align-items: center;
   /* position: absolute;
   top: 90%;
@@ -99,7 +223,54 @@
   width: 100px;
   background-color: #FF8A00;
 }
-
+ /*===========================================Registeration==============================================*/
+ .register_body{
+  background-image: url(/assets/img/website_pics/body1.jpg);
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+ }
+#registercard{
+  border-radius: 20px;
+  background-color:#8181811a;
+  /* background: linear-gradient(135deg, rgb(216, 115, 0, 0.1), rgb(255, 217, 0,0)); */
+  border: 2px solid rgb(216, 115, 0, 0.1);
+  max-width: 500px; 
+  text-align: center;
+  min-height: 150px;
+  backdrop-filter: blur(1rem);
+  /* -webkit-backdrop-filter: blur(10px);  */
+  box-shadow: 1px 1px 20px #000000 ;
+} 
+.register_txt{
+  text-decoration: underline;
+  text-decoration-color:  #d87300 ;
+  text-decoration-thickness: 5px;
+}
+#create_account_btn{
+  border-radius: 30px;
+  width: fit-content;
+  color: #000000;
+  background-color: #ff8800;
+}
+.register_fields{
+  border-color: transparent;
+  border-top: 0px;
+  outline: none;
+  border-bottom: 2px solid #D87300;
+  background: transparent;
+}
+#register_btn{
+  border-radius: 30px;
+  width: 100px;
+  background-color: #FFD700;
+  border: 10px solid #000000;
+}
+.successful_txt{
+  text-decoration: underline;
+  text-decoration-color:  #45be3c ;
+  text-decoration-thickness: 5px;
+}
   /*===========================================CATLOG PAGE===============================================*/
   /* .catlg_pg_product{ */
   /* checkbox for filter */
@@ -155,7 +326,45 @@
   .addtocart_icon{
     color: #000000; padding-bottom: 5%;
   }
-/*==========================================User profile================================================*/
+/*==========================================User profile==============================================*/
+.nav_tabs{
+  background-image: linear-gradient(to right, #d87300c0 5%, #FFD70067, #ffffff) ;
+  /* background-color: #81818162; */
+  border-radius: 15px 15px 0px 0px ;
+}
+.user_profile_body{
+  background-image: radial-gradient( #ffffff ,#81818160 ) ;
+}
+.user_profile_txt{
+  font-size: 15px;
+  color: #818181;
+  font-weight: 500;
+}
+.register_card{
+  border-radius:  15px ;
+  border-color: #818181;
+}
+.tab_title{
+  text-decoration: none; 
+  color: #000000;
+  border-radius: 10px 10px 0px 0px;
+  min-height: 40px;
+}
+.user_profile_fields{
+  border-color: #00000084; 
+  border-radius: 10px; 
+  min-height: 50px;
+  font-size: 20px;
+}
+.update_btn{
+  border-radius: 10px;
+  border: 1px solid #000000 ;
+  box-shadow: 0.1px 0.1px 5px #000000 ;
+  background-color: #FFD700a1;
+}
+.reset_pass_fields{
+  max-width: 400px;
+}
 
 /*=======================================================================================================*/
 /*=======================================================================================================*/

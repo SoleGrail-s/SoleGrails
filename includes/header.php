@@ -14,14 +14,18 @@
 	<?php endif; ?>
 	<title>SoleGrail's</title>
     
+		<!-- css link  -->
+	<link rel="stylesheet" href="/assets/css/style.css">
+
+	 <!-- js link  -->
+	 <link rel="stylesheet" href="/assets/js/script.js">
     
 	<!-- Lin to bootstrap css -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
-	<!-- css link  -->
-	<link rel="stylesheet" href="/assets/css/style.css">
+   
 
+	
 
 	<!-- Google fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,39 +50,65 @@
 		crossorigin="anonymous"></script>
 </head>
 
-<body>
+	<?php if($page_title === 'Login' ): ?>
+		<body class="roboto_font login_body login_body">
+	<?php elseif($page_title === 'Registration' ): ?>
+		<body class="roboto_font register_body" >
+	<?php elseif($page_title === 'User_Profile' ): ?>
+		<body class="roboto_font" >
+	<?php else:?>
+		<body class="roboto_font " >
+    <?php endif; ?>
+
 	<?php if(!isset($display_navbar_flag)) {
 			$display_navbar_flag = true;
 		}
 	?>
 	<?php if($display_navbar_flag === true): ?>
-		 <nav class="navbar navbar-expand-lg navbar-background-home">
-			<a class="navbar-brand navbar-brand-home" href="/index.php">SoleGrail's</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarcol"
-				aria-controls="navBarcol" aria-expanded="false" aria-label="Toggle Navbar">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse mr-2" id="navBarcol">
-				<ul class="navbar-nav ml-auto navbar-nav-home">
-					<li class="nav-item home-nav-item">
-						<a class="nav-link nav-link-active" href="#">Explore</a>
-					</li>
-					<li class="nav-item home-nav-item">
-						<a class="nav-link nav-link-active" href="#">Ebook</a>
-					</li> 
-					<li class="nav-item home-nav-item">
-						<a class="nav-link nav-link-active responsive-font-para" href="/login/index.php">Sign In</a>
-					</li>
-					<li class="nav-item home-nav-item">
-						<a class="nav-link nav-link-active responsive-font-para" href="/registration/user.php">Sign up</a>
-					</li>
-          <li class="nav-item home-nav-item">
-						<a class="nav-link nav-link-active responsive-font-para" href="/logout.php">Logout</a>
-					</li>
-				</ul>
-			</div>
-		</nav> 
+		<?php if($page_title === 'Login' || $page_title === 'Registration' ): ?>
+        <nav class="navbar navbar-expand-sm primary_navbar ">
+            <div class="container-fluid">
+                <a class="ms-3 navbar-brand" href="/index.php">
+                    <h3 class="lora_font fw-bolder brand_name ms-4">SoleGrail's</h3>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+		<?php else:?>
+		<nav class="navbar navbar-expand-sm primary_navbar  navbar-dark">
+  			<div class="container-fluid">
+    			<h3 class="lora_font fw-bolder text-center brand_name ms-4">SoleGrail's</h3>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+    			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+      				<ul class="navbar-nav ms-auto roboto_font me-4">
+					  	<?php if(isset($_SESSION["user_id"]) && ($_SESSION["role"]) && ($_SESSION["role"] === "user")): ?>
+							<li class="nav-item">
+								<a class="nav-link fw-bold text-dark" href="/logout.php">Logout</a>
+							</li>
+						<?php elseif(isset($_SESSION["user_id"]) && ($_SESSION["role"]) && ($_SESSION["role"] === "admin")): ?>
+							<li class="nav-item">
+								<a class="nav-link fw-bold text-dark" href="/logout.php">Logout</a>
+							</li>
+						<?php else:?>
+							<li class="nav-item">
+								<a class="nav-link fw-bold text-dark" href="/login/login">Login</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link fw-bold text-dark" href="/registration/register">Registration</a>
+							</li>  
+						<?php endif; ?>
+						
+      				</ul>
+    			</div>
+  			</div>
+		</nav>
+    	<?php endif; ?>
 	<?php endif; ?>
+	
 
 	<?php if (isset($page_title) && !empty($page_title)): ?>
 		<link rel="stylesheet" href="/assets/css/navbar.css">
@@ -88,6 +118,6 @@
 
 <style>
 	.home-nav-item:hover{
-		background-color: #1363df;
+		background-color: ;
 	}
 </style>

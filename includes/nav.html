@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SoleGrail's</title>
+
+        <!-- Lin to bootstrap css -->
+        <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous"
+        />
+
+        <!-- css link  -->
+        <link rel="stylesheet" href="/assets/css/style.css" />
+
+        <!-- Google fonts -->
+        
+       
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- ROBOTO -->
+        <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+        rel="stylesheet"
+        />
+        <!-- LORA -->
+        <link
+        href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+        rel="stylesheet"
+        />
+
+        <!-- fontawesome -->
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+        />
+
+        <!-- Bundle  -->
+        <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"
+        ></script>
+        <style>
+            
+        </style>
+    </head>
+    <body >
+        <nav class="navbar fixed-top navbar-expand-lg navbar-background-home  primary_navbar " >
+          
+            <ul class="nav justify-content-start pe-0" style="position: fixed; left: 2%;">
+              <li class="nav-item">
+                <a class="nav-link active fw-bolder lora_font" aria-current="page" href="#" style="font-size: 15px; ">HOME</a>
+              </li>
+            </ul>
+          
+            <div class="row text-center mx-auto border-bottom-3" >
+                <h3 class="lora_font fw-bolder brand_name" >SoleGrail's</h3>
+                <div class="col-3 white_r  brand_r ms-0 pe-3 " ></div>
+                <div class="col-3 black_r  brand_r pe-3"></div>
+                <div class="col-3 orange_r  brand_r pe-3"></div>
+                <div class="col-3 yellow_r  brand_r pe-3"></div>
+            </div>
+            <!-- gap: 0px 60px; display: grid; grid-template-columns: auto auto auto auto;  -->
+            <!-- hi-->
+        
+            <!-- <div class="collapse navbar-collapse mr-2 float-end" id="navBarcol">-->
+         <!-- <div class="collapse navbar-collapse">
+          <ul class="navbar-nav  navbar-nav-home">
+            <li class="nav-item home-nav-item">
+              <a class="nav-link nav-link-active" href="#">Explore</a>
+            </li>
+            <li class="nav-item home-nav-item">
+              <a class="nav-link nav-link-active" href="#">Ebook</a>
+            </li> 
+            <li class="nav-item home-nav-item">
+              <a class="nav-link nav-link-active responsive-font-para" href="/login/index.php">Sign In</a>
+            </li>
+            <li class="nav-item home-nav-item">
+              <a class="nav-link nav-link-active responsive-font-para" href="/registration/user.php">Sign up</a>
+            </li>
+            <li class="nav-item home-nav-item">
+              <a class="nav-link nav-link-active responsive-font-para" href="/logout.php">Logout</a>
+            </li>
+          </ul>
+         </div>        -->
+				 <div class="ms-5" style="position: fixed; right: 2%;">
+          <ul class="nav justify-content-end roboto_font ">
+            <li class="nav-item me-0">
+              <a class="nav-link active" aria-current="page" href="#">Log In</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="#">Register</a>
+            </li>
+            <!-- <li class="n
+              
+              av-item">
+              <a class="nav-link" href="#"><i class="fa-solid fa-bell fa-xl" style="color: #0c0c0c; transform: rotate(20deg);"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"><i class="fa-solid fa-circle fa-xl" style="color: #353536;"></i></a>
+            </li> -->
+          </ul>
+         </div>
+			 </div>  
+            
+      </nav>
+        <ul class="nav  justify-content-center my-2 roboto_font ">
+            <li class="nav-item px-3">
+              <a class="nav-link active" aria-current="page" href="#">Women</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link" href="#">Men</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link" href="#">Featured</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link" href="#" >New Arrivals</a>
+            </li>
+            <form class="d-flex px-3 ">
+                <input class="form-control" type="search" placeholder="Search here" aria-label="Search" style="border-radius: 25px; max-width: 300px;">
+                <button class="btn " type="submit"><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #000000; "></i></button>
+              </form>
+        </ul>
+
+        <div class="mt-5" > 
+            <!-- Footer -->
+            <footer class="text-center text-lg-start text-white" style="background-color: #000000ee">
+              <!-- Section: Social media -->
+              <section
+                class="d-flex justify-content-between p-2"
+                style="background-color: #494949"
+              >
+                <!-- Left -->
+              <div class="m-auto text-center " >
+                  <button onclick="scrollToTop()" class="text-uppercase border-0 " style="background: transparent ;" class="btn-block" type="button">Take me to top</button>
+              </div>
+                 
+              </section>
+              <section class="">
+                <div class="container text-center text-md-start mt-5">
+                  <!-- Grid row -->
+                  <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto my-4 position-relative">
+                      <!-- Content -->
+                      <h1 class=" fw-bold position-absolute top-50 start-50 translate-middle " >SoleGrail's<hr style="text-decoration: underline; color: #dac8c8; height: 5px " ></h1>
+                    </div>
+                    <!-- Grid column -->
+      
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto my-4">
+                      <!-- Links -->
+                      <h6 class="text-uppercase fw-bold">Help & FAQ</h6>
+                      <hr
+                        class="mb-4 mt-0 d-inline-block mx-auto"
+                        style="width: 80px; background-color:  #ffffff; height: 3px"
+                      />
+                      <p>
+                        <a href="#!" class="text-white">Online Ordering</a>
+                      </p>
+                      <p>
+                        <a href="#!" class="text-white">Shipping</a>
+                      </p>
+                      <p>
+                        <a href="#!" class="text-white">Billing</a>
+                      </p>
+                      <p>
+                        <a href="#!" class="text-white">Returns & Exchange</a>
+                      </p>
+                      <p>
+                          <a href="#!" class="text-white">Customer Service</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+      
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto my-4">
+                      <!-- Links -->
+                      <h6 class="text-uppercase fw-bold">Useful links</h6>
+                      <hr
+                        class="mb-4 mt-0 d-inline-block mx-auto"
+                        style="width: 80px; background-color:  #ffffff; height: 3px"
+                      />
+                      <p>
+                        <a href="#!" class="text-white">Your Account</a>
+                      </p>
+                      <p>
+                          <a href="#!" class="text-white">OrderStatus</a>
+                      </p>
+                      <p>
+                        <a href="#!" class="text-white">Become an Affiliate</a>
+                      </p>
+                      <p>
+                        <a href="#!" class="text-white">Shipping Rates</a>
+                      </p>
+                      <p>
+                        <a href="#!" class="text-white">Help</a>
+                      </p>
+                    </div>
+                    <!-- Grid column -->
+      
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 my-4">
+                      <!-- Links -->
+                      <h6 class="text-uppercase fw-bold">Follow US</h6>
+                      <hr
+                        class="mb-4 mt-0 d-inline-block mx-auto"
+                        style="width: 80px; background-color:  #ffffff; height: 3px"
+                      />
+                      <p >
+                          <i class="fa-brands fa-instagram fa-2xl pe-2" style="color: #ffffff" ></i>
+                          <i class="fa-brands fa-square-facebook fa-2xl pe-2" style="color: #ffffff;"></i>
+                          <i class="fa-brands fa-x-twitter fa-2xl pe-2" style="color: #ffffff;"></i>
+                          <i class="fa-brands fa-linkedin fa-2xl pe-2" style="color: #ffffff;"></i>
+                          <i class="fa-brands fa-whatsapp fa-2xl pe-2" style="color: #ffffff;"></i>
+                      </p>
+                    </div>
+                    <!-- Grid column -->
+                  </div>
+                  <!-- Grid row -->
+                </div>
+              </section>
+              <!-- Section: Links  -->
+              
+              <hr style="height: 2px;">
+      
+              <!-- Copyright -->
+              <div class="text-center p-1 pb-3">
+                  © 2023 Copyright:<a class="text-white" href="">SoleGrail's.com</a>
+              </div>
+              <!-- Copyright -->
+            </footer>
+            <!-- Footer -->
+          </div>
+          <!-- End of .container -->
+        </body>
+      </html>
+    </body>
+</html>
