@@ -10,12 +10,27 @@
 }
 .txt_dec{
   color: #000000;
-
   text-decoration: none !important;
+}
+.txt_dec:hover{
+  color: #000000;
+  text-decoration: none !important;
+}
+.expl_btn{
+  color: #ffffff;
+  text-decoration: none !important;
+}
+.expl_btn:hover{
+  color: #ffffff;
+  text-decoration: none !important;
+}
+.no_outline:focus{
+ outline: none;
 }
 .black{
   color: #000000;
  } 
+ /* register placeholder  */
 ::placeholder,.register_placeholder {
   color: #ffffff;
   opacity: 1; /* Firefox */
@@ -28,18 +43,32 @@
 ::-ms-input-placeholder,.register_placeholder { /* Microsoft Edge */
  color: #ffffff;
 }
+/* login placeholder */
+::placeholder,.login_placeholder {
+  color: #000000;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder,.login_placeholder { /* Internet Explorer 10-11 */
+ color: #000000;
+}
+
+::-ms-input-placeholder,.login_placeholder { /* Microsoft Edge */
+ color: #000000;
+}
 .no_resize{
   resize: none;
 }
 /* primarynavbar */
 .primary_navbar{
-  /* background-color: #C2C2C2; */
-  background-image: radial-gradient(closest-corner at 50% 50%, #ffffff 1%, #818181 );
+  background-color: #c2c2c2;
+  height: 55px;
+  /* background-image: radial-gradient(closest-corner at 50% 50%, #ffffff 1%, #818181 ); */
 }
 
 .brand_name{
   /* margin-right: 20px; */
-  font-size: 50px;
+  font-size: 30px;
   z-index: 10;
   color: #000000;
   text-shadow: #ffffff 2px 2px 40px;
@@ -56,10 +85,11 @@
   position: absolute;
   content: '';
   width: 70px;
-  height: 72px;
-  /* transform: skew(-60deg); */
+  height: 55px;
+  transform: skew(-50deg);
   /* gap: 100px; */
   top: 0px;
+  
 }
 .white_r::after,
 .white_r::before{
@@ -87,11 +117,7 @@
 /*===========================================Landing page============================================*/
 .shop_now{
   
-  background-color:#D87300; 
-  color: #000000; 
-  border: 1px solid #000000;
-  font-style: bold;
-}
+} 
 .solemate{
   /* position: absolute; */
   /* top: 50%;
@@ -122,7 +148,7 @@
 }
 .overlay-content {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -154,16 +180,16 @@
 .login_body{
   /* background-image: url(/assets/img/404614.jpg); */
   
-  /* background: radial-gradient(#FFD700, #D87300); */
+  background: radial-gradient(#ffd9004d, #d8730057);
 }
 /* .login_section{
   
 } */
 #logincard{
   border-radius: 20px;
-  background-color: #d8730023;
+  background-color: #d8730027;
   /* background: linear-gradient(135deg, rgb(216, 115, 0, 0.1), rgb(255, 217, 0,0)); */
-  border: 2px solid rgb(216, 115, 0, 0.1);
+  border: 5px solid rgb(216, 115, 0, 0.5);
   max-width: 500px; 
   text-align: center;
   min-height: 150px;
@@ -239,6 +265,11 @@
   width: 100px;
   background-color: #FFD700;
   border: 10px solid #000000;
+}
+.successful_txt{
+  text-decoration: underline;
+  text-decoration-color:  #45be3c ;
+  text-decoration-thickness: 5px;
 }
   /*===========================================CATLOG PAGE===============================================*/
   /* .catlg_pg_product{ */

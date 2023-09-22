@@ -10,7 +10,7 @@
         <div class="m-auto text-center " >
             <button onclick="scrollToTop()" class="text-uppercase border-0 " style="background: transparent ;" class="btn-block" type="button">Take me to top</button>
         </div>
-           
+        
         </section>
         <section class="">
           <div class="container text-center text-md-start mt-5">
@@ -101,8 +101,8 @@
         <hr style="height: 2px;">
 
         <!-- Copyright -->
-        <div class="text-center p-1 pb-3">
-            © 2023 Copyright:<a class="text-white" href="">SoleGrail's.com</a>
+        <div class="text-center  pb-3">
+            © 2023 Copyright:<a class="text-white" href=""> SoleGrail's.com</a>
         </div>
         <!-- Copyright -->
       </footer>
