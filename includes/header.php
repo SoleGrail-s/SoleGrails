@@ -54,7 +54,7 @@
 		<body class="roboto_font login_body login_body">
 	<?php elseif($page_title === 'Registration' ): ?>
 		<body class="roboto_font register_body" >
-	<?php elseif($page_title === 'User_Profile' ): ?>
+	<?php elseif($page_title === 'User Profile' ): ?>
 		<body class="roboto_font" >
 	<?php else:?>
 		<body class="roboto_font " >
@@ -65,7 +65,7 @@
 		}
 	?>
 	<?php if($display_navbar_flag === true): ?>
-		<?php if($page_title === 'Login' || $page_title === 'Registration' ): ?>
+		<?php if($page_title === 'Login' || $page_title === 'Registration'|| $page_title === 'Customer Details' ): ?>
         <nav class="navbar navbar-expand-sm primary_navbar ">
             <div class="container-fluid">
                 <a class="ms-3 navbar-brand" href="/index.php">
@@ -79,17 +79,28 @@
 		<?php else:?>
 		<nav class="navbar navbar-expand-sm primary_navbar  navbar-dark">
   			<div class="container-fluid">
-    			<h3 class="lora_font fw-bolder text-center brand_name ms-4">SoleGrail's</h3>
+			  <a class="ms-3 navbar-brand" href="/index.php">
+                    <h3 class="lora_font fw-bolder brand_name ms-4">SoleGrail's</h3>
+                </a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
 					<span class="navbar-toggler-icon"></span>
 				</button>
     			<div class="collapse navbar-collapse" id="collapsibleNavbar">
       				<ul class="navbar-nav ms-auto roboto_font me-4">
 					  	<?php if(isset($_SESSION["user_id"]) && ($_SESSION["role"]) && ($_SESSION["role"] === "user")): ?>
+							<li class="nav-item my-auto">
+								<a href="/user/">
+								<i class="fa-solid fa-user fa-lg " style="color: #000000;"></i>
+								</a>
+							</li>
 							<li class="nav-item">
 								<a class="nav-link fw-bold text-dark" href="/logout.php">Logout</a>
 							</li>
 						<?php elseif(isset($_SESSION["user_id"]) && ($_SESSION["role"]) && ($_SESSION["role"] === "admin")): ?>
+							<li class="nav-item">
+								<a class="nav-link fw-bold text-dark" href="/logout.php">Logout</a>
+							</li>
+						<?php elseif ($page_title === 'Admin Panel' ):?>
 							<li class="nav-item">
 								<a class="nav-link fw-bold text-dark" href="/logout.php">Logout</a>
 							</li>

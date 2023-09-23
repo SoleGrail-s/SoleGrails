@@ -30,6 +30,19 @@
 .black{
   color: #000000;
  } 
+ .dropdown-content {
+  right: 0;
+}
+
+.breadcrumb{
+  font-size: medium;
+  
+}
+.card_title{
+  font-size: 40px; 
+  text-decoration: underline solid #D87300 5px; 
+  border-bottom: 8px;
+}
  /* register placeholder  */
 ::placeholder,.register_placeholder {
   color: #ffffff;
@@ -319,10 +332,14 @@
   }
   .buy_btn{
     background-color: #ff8a00;
-    border-radius: 15px;
+    border-radius: 10px;
     font-size:medium;
-    font-family: 'Roboto', sans-serif; 
-  }
+    border: 0px;
+}
+.buy_btn:hover::before{
+content:"BUY ";
+font-size:medium;
+}
   .addtocart_icon{
     color: #000000; padding-bottom: 5%;
   }
@@ -366,10 +383,35 @@
   max-width: 400px;
 }
 
-/*=======================================================================================================*/
-/*=======================================================================================================*/
+/*=============================================View customer===========================================*/
+.view_details{
+  color: #7d7d7d;
+}
+.view_details:hover{
+  color: #D87300;
+  cursor: pointer;
+}
+.delete_item{
+  color: #7d7d7d;
 
-/*=======================================================================================================*/
+}
+.delete_item:hover{
+  color: #d80000;
+  cursor: pointer;
+}
+/*=========================================Customer details============================================*/
+
+.details_section{
+  border-bottom-style: solid; border-color: #FFD700; font-size: 30px; 
+}
+/*==========================================Admin Panel===========================================*/
+
+.admin_panel_btn{
+  display: flex; 
+  background-color: #d87300a3; 
+  color: #000000;
+  text-decoration: none;
+}
 /*=======================================================================================================*/
 /*=======================================================================================================*/
 

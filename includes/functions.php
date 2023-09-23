@@ -109,5 +109,44 @@ function login($data){
 	return false;
 }
 
+function display_sneakers()
+	{
+		global $db;
+		$sql = "SELECT * FROM products";
+		$stmt = $db->prepare($sql);
 
+		if( $stmt->execute() )
+		{
+			return $stmt->fetchAll(PDO::FETCH_ASSOC);
+		}
+		return false;
+	}
+
+	function get_user_list_from_users()
+	{
+		global $db;
+
+		$sql = "SELECT * FROM users_details";
+		$stmt = $db->prepare($sql);
+
+		if ($stmt->execute())
+		{
+			return $stmt->fetchAll(PDO::FETCH_ASSOC);
+		}
+		return false;
+	}
+
+	function get_products_list()
+	{
+		global $db;
+
+		$sql = "SELECT * FROM products";
+		$stmt = $db->prepare($sql);
+
+		if ($stmt->execute())
+		{
+			return $stmt->fetchAll(PDO::FETCH_ASSOC);
+		}
+		return false;
+	}
 ?>

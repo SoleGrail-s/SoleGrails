@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoleGrail's | Customers</title>
+    <title>SoleGrail's</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -29,62 +29,51 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class="container-fluid mt-5">
+    <div class="container-fluid">
         <nav aria-label="breadcrumb lora_font">
             <ol class="breadcrumb">
               <li class="breadcrumb-item "><a href="#" >Home</a></li>
-              <li class="breadcrumb-item " aria-current="page">Customers</li>
+              <li class="breadcrumb-item " aria-current="page">Products</li>
             </ol> 
         </nav>
         
         <div class="justify-content-md-end">
+            <button type="button" class="btn btn-outline-dark add_btn x-2"><i class="fa-solid fa-plus "></i>Add a Product</button>
+           
             <div >
                 <input type="text" class="input" placeholder="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </div>
+                
+            
+        </div>
+        <div class="justify-content-center mx-auto d-grid my-3">
+          <h1 class="lora_font fw-bold" style=" text-decoration: underline solid #D87300 5px; border-bottom: 8px;">Products</h1>
         </div>
         <div>
             <table class="table ">
                 <thead>
                   <tr >
-                    <th>Customer Id</th>
-                    <th>Name</th>
-                    <th>Phone nunmber</th>
-                    <th>Alternate Number</th>
-                    <th>Email-Id</th>
-                    <th>Country</th>
+                    <th>Product Id</th>
+                    <th>Display Image</th>
+                    <th>Product name</th>
+                    <th>Brand</th>
+                    <th>Release Year</th>
+                    <th>Price</th>
                     <th>Details</th>
                     <th>Delete</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr class="align-middle gx-5" >
-                    <td>SGC0001</td>
-                    <td>Kartik Kunder</td>
-                    <td>1234567890</td>
-                    <td>1234567890</td>
-                    <td>customeremail@email.com</td>
-                    <td>Hindustan</td>
-                    <td class=""><i class="fa-solid fa-eye" style="color: #7d7d7d;"></i></td>
-                    <td><i class="fa-solid fa-trash-can" style="color: #7d7d7d;"></i></td>
-                  </tr>
-                  <tr class="align-middle gx-5" >
-                    <td>SGC0002</td>
-                    <td>Manav Kumar</td>
-                    <td>1234567890</td>
-                    <td>1234567890</td>
-                    <td>customeremail@email.com</td>
-                    <td>Hindustan</td>
-                    <td class=""><i class="fa-solid fa-eye" style="color: #7d7d7d;"></i></td>
-                    <td><i class="fa-solid fa-trash-can" style="color: #7d7d7d;"></i></td>
-                  </tr>
-                  <tr class="align-middle gx-5" >
-                    <td>SGC0001</td>
-                    <td>Sejal Lewis</td>
-                    <td>1234567890</td>
-                    <td>1234567890</td>
-                    <td>customeremail@email.com</td>
-                    <td>Hindustan</td>
+                    <td>SGP0001</td>
+                    <td >
+                      <img src="/admin/demoshoe.jpg" class="img-fluid  mx-auto d-block" alt="product image" height="100px" width="100px">
+                    </td>
+                    <td>Forum MID 'CLOUD WHITE/CREW YELLOW/GUM 3 CLOUD WHITE/CREW YELLOW/GUM 3'</td>
+                    <td>Nike</td>
+                    <td>2016</td>
+                    <td>9,000</td>
                     <td class=""><i class="fa-solid fa-eye" style="color: #7d7d7d;"></i></td>
                     <td><i class="fa-solid fa-trash-can" style="color: #7d7d7d;"></i></td>
                   </tr>

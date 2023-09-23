@@ -1,5 +1,5 @@
 <?php
-     $page_title = "User_Profile";
+     $page_title = "User Profile";
     require_once($_SERVER["DOCUMENT_ROOT"]."/includes/init.php");
 ?>
 <body class="roboto_font user_profile_body" >

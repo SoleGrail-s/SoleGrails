@@ -13,7 +13,7 @@
     </p>
     <p class="fw-bolder mb-4">
         Buy from vast range of sneakers
-        <button class="btn btn-dark btn-sm fw-bold border-0 box_shadow"  type="button" ><a class="expl_btn" href="#">Explore <i class="ps-1 fa-solid fa-dolly fa-lg" style="color: #ffffff;"></i></a></button>
+        <button class="btn btn-dark btn-sm fw-bold border-0 box_shadow"  type="button" ><a class="expl_btn" href="/explore/">Explore <i class="ps-1 fa-solid fa-dolly fa-lg" style="color: #ffffff;"></i></a></button>
     </p>
     </div>
 </div>

@@ -1,0 +1,176 @@
+#FFD700 yellow color
+#D87300 orange color
+#818181 grey color
+Red	#FF0000	(255,0,0)
+Lime	#00FF00	(0,255,0)
+Blue	#0000FF	(0,0,255)
+Yellow	#FFFF00	(255,255,0)
+
+.scrollable-content {
+    max-height: calc(100vh - 90px); /* Adjust the height based on your design */
+    overflow-y: auto;
+  }
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px; /* Set an appropriate height */
+  }
+
+  .navbar-text {
+    font-size: 40px;
+    font-weight: bold; 
+    color: black;
+  }
+  .nav-link-women,
+  .nav-link-men, 
+  .nav-link-features,
+  .nav-link-newarrivals,
+  .nav-link-shoecare,
+  .nav-link-todaysdeals,
+  .nav-link-treading
+  {
+    font-size: 8px; /* Set your desired font size */
+  }
+  .navbar-nav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .navbar-nav .nav-item {
+    margin-right: 50px; /* Adjust the spacing between items */
+  }
+
+  .nav-link {
+    font-size: 15px; /* Set your desired font size */
+    color: black !important; /* Ensure the link color is black */
+    text-decoration: none !important; /* Remove underlines */
+  }
+  .prominent-footer ul {
+      list-style-type: disc; /* Use 'circle' for a hollow bullet */
+      margin-left: 20px; /* Adjust the margin as needed */
+  }
+  .prominent-footer p, h1{
+    padding-left: 20px;
+  }
+.no_resize{
+  resize: none;
+}
+
+ <!-- <nav class="navbar navbar-expand-lg navbar-background-home">
+			<a class="navbar-brand navbar-brand-home" href="/index.php">SoleGrail's</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarcol"
+				aria-controls="navBarcol" aria-expanded="false" aria-label="Toggle Navbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse mr-2" id="navBarcol">
+				<ul class="navbar-nav ml-auto navbar-nav-home">
+					<li class="nav-item home-nav-item">
+						<a class="nav-link nav-link-active" href="#">Explore</a>
+					</li>
+					<li class="nav-item home-nav-item">
+						<a class="nav-link nav-link-active" href="#">Ebook</a>
+					</li> 
+					<li class="nav-item home-nav-item">
+						<a class="nav-link nav-link-active responsive-font-para" href="/login/index.php">Sign In</a>
+					</li>
+					<li class="nav-item home-nav-item">
+						<a class="nav-link nav-link-active responsive-font-para" href="/registration/user.php">Sign up</a>
+					</li>
+          <li class="nav-item home-nav-item">
+						<a class="nav-link nav-link-active responsive-font-para" href="/logout.php">Logout</a>
+					</li>
+				</ul>
+			</div>
+		</nav> -->
+
+    <!-- <div class="row text-center mx-auto ">
+				<div class="col-3 white_r  brand_r pe-3 " ></div>
+                <div class="col-3 black_r  brand_r pe-3"></div>
+                <div class="col-3 orange_r  brand_r pe-3"></div>
+                <div class="col-3 yellow_r  brand_r pe-3"></div>
+				</div> -->
+
+        <!-- <nav class="navbar navbar-expand-sm  primary_navbar" >
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarcol">
+                    <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="nav justify-content-start pe-0" style="position: fixed; left: 2%;">
+              <li class="nav-item">
+                <a class="nav-link active fw-bolder lora_font" aria-current="page" href="#" style="font-size: 15px; ">HOME</a>
+              </li>
+            </ul>
+          
+            <div class="row text-center mx-auto border-bottom-3" >
+                <h3 class="lora_font fw-bolder brand_name" >SoleGrail's</h3>
+                <div class="col-3 white_r  brand_r pe-3 " ></div>
+                <div class="col-3 black_r  brand_r pe-3"></div>
+                <div class="col-3 orange_r  brand_r pe-3"></div>
+                <div class="col-3 yellow_r  brand_r pe-3"></div>
+            </div>
+
+			
+			<div class="ms-5 collapse navbar-collapse" id="navBarcol" style="position: fixed; right: 2%;">
+          <ul class="nav justify-content-end roboto_font ">
+            <li class="nav-item me-0">
+              <a class="nav-link active" aria-current="page" href="#">Log In</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="#">Register</a>
+            </li>
+			</ul>
+         </div>
+	</nav> -->
+
+
+
+  <__________________________catalog page layout_____________________________________________________>
+  <!-- <div class=" col-sm-6  ">
+        <div class="card">
+            <div class="row">
+                <div class="col-md-5 position-relative" >
+                    <img src="/assets/img/'forum mid cloud white crew yellow gum3 cloud white crew yellow gum 3/forum-mid-cloud-whitecrew-yellowgum-3-cloud-whitecrew-yellowgum-3-64998843e0186.jpg" class="float-start catlg_pg_product_img img-fluid " alt="product image">
+                    <div class="position-absolute top-0 end-0 "><h4></h4></div> 
+                    <h4><span class="badge  bg-white text-dark position-absolute top-0 end-0">Brand</span></h4> 
+                </div>
+                <div class="col-md-7 ">
+                    <div class="catlg_pg_product_name mx-2" >
+                        <p class="fw-bold text-uppercase align-middle" > Forum MID 'CLOUD WHITE/CREW YELLOW/GUM 3 CLOUD WHITE/CREW YELLOW/GUM 3'</p>
+                    </div>
+                    <div class="row mx-2">
+                        <div class="col-6 d-grid mx-auto mb-3" >
+                            <button type="button" class="btn btn-warning fw-bold btn-lg buy_btn box_shadow" ><i class="fa-solid fa-indian-rupee-sign fa-lg " style="color: #000000;"> 10,000</i></button>
+                        </div>
+                        <div class="col-6 text-center my-auto ">
+                            <i class="fa-solid fa-cart-shopping fa-xl addtocart_icon"></i>
+                        </div>
+                    </div>    
+                </div> 
+            </div>
+        </div>
+    </div> -->
+
+
+    <_________________________________________listing customers________________________________________>
+    <!-- <tr class="align-middle gx-5" >
+                    <td>SGC0002</td>
+                    <td>Manav Kumar</td>
+                    <td>1234567890</td>
+                    <td>1234567890</td>
+                    <td>customeremail@email.com</td>
+                    <td>Hindustan</td>
+                    <td class=""><i class="fa-solid fa-eye" style="color: #7d7d7d;"></i></td>
+                    <td><i class="fa-solid fa-trash-can" style="color: #7d7d7d;"></i></td>
+                  </tr>
+                  <tr class="align-middle gx-5" >
+                    <td>SGC0001</td>
+                    <td>Sejal Lewis</td>
+                    <td>1234567890</td>
+                    <td>1234567890</td>
+                    <td>customeremail@email.com</td>
+                    <td>Hindustan</td>
+                    <td class=""><i class="fa-solid fa-eye" style="color: #7d7d7d;"></i></td>
+                    <td><i class="fa-solid fa-trash-can" style="color: #7d7d7d;"></i></td>
+                  </tr> -->

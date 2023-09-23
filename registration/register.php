@@ -1,6 +1,6 @@
 <?php 
     $page_title = "Registration";
-    $display_navbar_flag = false;
+    $display_navbar_flag = true;
     require_once($_SERVER["DOCUMENT_ROOT"]."/includes/init.php");
 
     if(isset($_POST["create_account"]))
@@ -16,9 +16,6 @@
 	}
 
 ?>
-<!-- <div class=""> -->
-<!-- <img src="/assets/img/404614.jpg" alt=""> -->
-    <!--  -->
     <div class="mx-auto d-grid"></div>
         <?php view_prompts(); ?>
     </div>
@@ -30,8 +27,6 @@
             <div class="card mt-5 mx-4  text-center mx-sm-auto " id="registercard">
             
                 <h2 class="text-center fw-bolder register_txt mt-3" >Register</h2>
-                <!-- <p class="text-center   mt-0" style="color: #ffffff;"><small>Don't have have an account? Create one to boost your experience</small></p> -->
-                
                 <div class="row mx-5 mt-5 ">
                     <input class=" input-group register_fields input-group-lg register_placeholder" type="text" id="email_id"
                         name="email_id" placeholder="Email-id" required >
@@ -59,6 +54,5 @@
 </div>
  
 <?php 
-    
     require_once($_SERVER["DOCUMENT_ROOT"]."/includes/footer.php");
 ?>
