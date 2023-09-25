@@ -1,38 +1,34 @@
 <?php
 	$page_title = "View Customer";
-    $display_navbar_flag = false;
+    $display_navbar_flag = true;
 	require_once($_SERVER["DOCUMENT_ROOT"]."/includes/init.php");
 ?>
-<div class="container-fluid mt-5">
-        <!-- <nav aria-label="breadcrumb lora_font">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item "><a href="#" >Home</a></li>
-              <li class="breadcrumb-item " aria-current="page">Customers</li>
-            </ol> 
-        </nav>
-        
-        <div class="justify-content-md-end">
-            <div >
-                <input type="text" class="input" placeholder="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </div>
-        </div> -->
-        <div class="justify-content-center mx-auto d-grid my-3">
+<div class="container-fluid ">
+<nav class="lora_font ms-5 my-2 " aria-label="breadcrumb lora_font ms-2">
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item "><a href="/admin/index.php" class="txt_dec">Home</a></li>
+    <li class="breadcrumb-item " aria-current="page">
+        Customer Listing
+    </li>
+    
+    </ol>
+</nav>
+        <div class="justify-content-center mx-auto d-grid mb-3">
           <h1 class="lora_font fw-bold" style=" text-decoration: underline solid #D87300 5px; border-bottom: 8px;">Customers</h1>
         </div>
-        <div >
+        <div class="card mb-5">
             <table class="table ">
                 <thead>
                   <tr >
-                    <th>Sr. No.</th>
-                    <th>Customer Id</th>
-                    <th>Name</th>
-                    <th>Phone nunmber</th>
-                    <th>Alternate Number</th>
-                    <th>Email-Id</th>
-                    <th>State</th>
-                    <th>Details</th>
-                    <th>Delete</th>
+                    <th class="text-center">Sr. No.</th>
+                    <th class="text-center">Customer Id</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Phone nunmber</th>
+                    <th class="text-center">Alternate Number</th>
+                    <th class="text-center">Email-Id</th>
+                    <th class="text-center">State</th>
+                    <th class="text-center">Details</th>
+                    <th class="text-center">Delete</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -42,15 +38,15 @@
                     foreach($users as $user):
                 ?>
                   <tr class="align-middle gx-5" >
-                    <td><?php echo $srno?></td>
-                    <td><?php echo $user["user_id"]?></td>
-                    <td><?php echo $user["f_name"]," ",$user["l_name"]?></td>
-                    <td><?php echo $user["contact_no"]?></td>
-                    <td><?php echo $user["alternate_no"]?></td>
-                    <td><?php echo $user["email_id"]?></td>
-                    <td><?php echo $user["state"]?></td>
-                    <td ><i class="fa-solid fa-eye fa-lg view_details" ></i></td>
-                    <td><i class="fa-solid fa-trash-can fa-lg delete_item"></i></td>
+                    <td class="text-center"><?php echo $srno?></td>
+                    <td class="text-center"><?php echo $user["user_id"]?></td>
+                    <td class="text-center"><?php echo $user["f_name"]," ",$user["l_name"]?></td>
+                    <td class="text-center"><?php echo $user["contact_no"]?></td>
+                    <td class="text-center"><?php echo $user["alternate_no"]?></td>
+                    <td class="text-center"><?php echo $user["email_id"]?></td>
+                    <td class="text-center"><?php echo $user["state"]?></td>
+                    <td class="text-center"><i class="fa-solid fa-eye fa-lg view_details" ></i></td>
+                    <td class="text-center"><i class="fa-solid fa-trash-can fa-lg delete_item"></i></td>
                   </tr>
                 </tbody>
                 <?php 

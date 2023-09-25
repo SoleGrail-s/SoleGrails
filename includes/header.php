@@ -14,6 +14,9 @@
 	<?php endif; ?>
 	<title>SoleGrail's</title>
     
+	<!-- icon  -->
+	<link rel="icon" href="/assets/img/logos/SG-logo.png" sizes="16x16 32x32" type="image/png">
+
 		<!-- css link  -->
 	<link rel="stylesheet" href="/assets/css/style.css">
 
@@ -48,14 +51,15 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 		crossorigin="anonymous"></script>
+		
 </head>
 
 	<?php if($page_title === 'Login' ): ?>
 		<body class="roboto_font login_body login_body">
 	<?php elseif($page_title === 'Registration' ): ?>
 		<body class="roboto_font register_body" >
-	<?php elseif($page_title === 'User Profile' ): ?>
-		<body class="roboto_font" >
+	<?php elseif($page_title === 'Profile' ): ?>
+		<body class="roboto_font user_profile_body" >
 	<?php else:?>
 		<body class="roboto_font " >
     <?php endif; ?>
@@ -65,7 +69,7 @@
 		}
 	?>
 	<?php if($display_navbar_flag === true): ?>
-		<?php if($page_title === 'Login' || $page_title === 'Registration'|| $page_title === 'Customer Details' ): ?>
+		<?php if($page_title === 'Login' || $page_title === 'Registration'|| $page_title === 'Customer Details'): ?>
         <nav class="navbar navbar-expand-sm primary_navbar ">
             <div class="container-fluid">
                 <a class="ms-3 navbar-brand" href="/index.php">
@@ -82,6 +86,12 @@
 			  <a class="ms-3 navbar-brand" href="/index.php">
                     <h3 class="lora_font fw-bolder brand_name ms-4">SoleGrail's</h3>
                 </a>
+				<div class="row">
+					<div class="col"></div>
+					<div class="col"></div>
+					<div class="col"></div>
+					<div class="col"></div>
+				</div>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
 					<span class="navbar-toggler-icon"></span>
 				</button>

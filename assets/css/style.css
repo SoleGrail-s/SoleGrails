@@ -16,6 +16,7 @@
   color: #000000;
   text-decoration: none !important;
 }
+
 .expl_btn{
   color: #ffffff;
   text-decoration: none !important;
@@ -84,7 +85,7 @@
   font-size: 30px;
   z-index: 10;
   color: #000000;
-  text-shadow: #ffffff 2px 2px 40px;
+  text-shadow: #ffffff 5px 5px 40px;
   /* text-decoration: underline 3px; */
 }
 .white_r::after,
@@ -129,7 +130,8 @@
 
 /*===========================================Landing page============================================*/
 .shop_now{
-  
+  background-color: #D87300;
+  border-radius: 5px;
 } 
 .solemate{
   /* position: absolute; */
@@ -347,7 +349,7 @@ font-size:medium;
 .nav_tabs{
   background-image: linear-gradient(to right, #d87300c0 5%, #FFD70067, #ffffff) ;
   /* background-color: #81818162; */
-  border-radius: 15px 15px 0px 0px ;
+  /* border-radius: 15px 15px 0px 0px ; */
 }
 .user_profile_body{
   background-image: radial-gradient( #ffffff ,#81818160 ) ;
@@ -357,14 +359,15 @@ font-size:medium;
   color: #818181;
   font-weight: 500;
 }
-.register_card{
+.user_profile_card{
   border-radius:  15px ;
   border-color: #818181;
+  min-height: 120px;
 }
 .tab_title{
   text-decoration: none; 
   color: #000000;
-  border-radius: 10px 10px 0px 0px;
+  /* border-radius: 10px 10px 0px 0px; */
   min-height: 40px;
 }
 .user_profile_fields{
@@ -393,11 +396,13 @@ font-size:medium;
 }
 .delete_item{
   color: #7d7d7d;
-
+  text-decoration: none;
 }
 .delete_item:hover{
   color: #d80000;
   cursor: pointer;
+  text-decoration: none;
+
 }
 /*=========================================Customer details============================================*/
 
@@ -412,7 +417,21 @@ font-size:medium;
   color: #000000;
   text-decoration: none;
 }
-/*=======================================================================================================*/
-/*=======================================================================================================*/
+/*=============================================Brand=============================================*/
+.add_brands_btn{
+background-color: #D87300;
+}
 
-/*=======================================================================================================*/
+.edit_item_pen{
+  color: #7d7d7d;
+  text-decoration: none;
+}
+.edit_item_pen:hover{
+  color: #D87300;
+  cursor: pointer;
+  text-decoration: none;
+
+}
+/*==============================================================================================*/
+
+/*==============================================================================================*/

@@ -3,6 +3,16 @@
 	require_once($_SERVER["DOCUMENT_ROOT"]."/includes/init.php");
 ?>
 
+
+<style>
+   
+   .shop_now{
+  background-color: #D87300;
+  border-radius: 5px;
+} 
+</style>
+
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 p-0">
@@ -11,7 +21,7 @@
                 <div class="overlay-content ">
                     <h1 class=" fw-bold lora_font" style="color: #000000;">Find your Sole Mate at SoleGrail's, Walk with style</h1>
                     
-                    <a href="#" class=" btn btn-lg fw-bold text-uppercase  lora_font box_shadow" >Shop Now</a>
+                    <a href="/explore/index.php " class=""  ><button class="shop_now txt_dec btn-lg fw-bold text-uppercase  lora_font box_shadow">Shop Now</button></a>
                 </div>
             </div>
         </div>

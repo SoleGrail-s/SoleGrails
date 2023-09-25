@@ -3,9 +3,17 @@
     $display_navbar_flag = true;
 	require_once($_SERVER["DOCUMENT_ROOT"]."/includes/init.php");
 ?>
-
+<nav class="lora_font ms-5 my-2 " aria-label="breadcrumb lora_font ms-2">
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item "><a href="/admin/index.php" class="txt_dec">Home</a></li>
+    <li class="breadcrumb-item " aria-current="page">
+        Add Product
+    </li>
+    
+    </ol>
+</nav>
         <form action="">
-            <div class="card m-5 " style="border-radius: 50px; box-shadow: 10px 10px 50px rgb(129, 129, 129);">
+            <div class="card mt-2 mb-5 mx-5" style="border-radius: 50px; box-shadow: 10px 10px 50px rgb(129, 129, 129);">
                 <div class=" fw-bold mx-auto d-grid  mt-3" style="font-size: 40px; text-decoration: underline solid #D87300 5px; border-bottom: 8px;">
                     Add Product
                 </div>

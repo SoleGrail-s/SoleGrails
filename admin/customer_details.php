@@ -4,14 +4,14 @@
 	require_once($_SERVER["DOCUMENT_ROOT"]."/includes/init.php");
 ?>
 <nav class="lora_font ms-5 my-2 " aria-label="breadcrumb lora_font ms-2">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item "><a href="#" class="txt_dec">Home</a></li>
-        <li class="breadcrumb-item " aria-current="page">
-          <a href="/admin/view_customer.php" class="txt_dec">View Customers</a>
-        </li>
-        <li class="breadcrumb-item" aria-current="page">Customer Details</li>
-      </ol>
-    </nav>
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item "><a href="#" class="txt_dec">Home</a></li>
+    <li class="breadcrumb-item " aria-current="page">
+        <a href="/admin/view_customer.php" class="txt_dec">View Customers</a>
+    </li>
+    <li class="breadcrumb-item" aria-current="page">Customer Details</li>
+    </ol>
+</nav>
 <form action="">
         <div class="card mx-5 mb-5" style="border-radius: 50px; box-shadow: 10px 10px 50px #818181;">
         

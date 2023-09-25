@@ -126,7 +126,7 @@ function display_sneakers()
 	{
 		global $db;
 
-		$sql = "SELECT * FROM users_details";
+		$sql = "SELECT * FROM users_details WHERE role = 'user'";
 		$stmt = $db->prepare($sql);
 
 		if ($stmt->execute())
@@ -146,6 +146,127 @@ function display_sneakers()
 		if ($stmt->execute())
 		{
 			return $stmt->fetchAll(PDO::FETCH_ASSOC);
+		}
+		return false;
+	}
+
+	function does_brand_already_exist($brand_name)
+	{
+		global $db;
+		$sql = "SELECT COUNT(1) as 'count' FROM brands WHERE brand_name = :brand_name AND deleted = '0'";
+		$stmt = $db->prepare($sql);
+		$stmt->bindParam(':brand_name', $brand_name, PDO::PARAM_STR);
+
+		if($stmt->execute())
+		{
+			$result=$stmt->fetch(PDO::FETCH_ASSOC)["count"];
+			return $result> 0 ? true : false;
+		}
+		return false;
+	}
+
+	function get_brand_names()
+ 	{
+  		global $db;
+  		$sql = "SELECT * FROM brands WHERE deleted = '0'";
+ 	 	$stmt = $db->prepare($sql);
+  		
+		if($stmt->execute())
+  		{
+   			return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  		}
+  		return false;
+ 	}
+	 function get_brand_by_id($brand_id)
+	 {
+		 global $db;
+		 $sql = "SELECT * FROM brands WHERE brand_id = $brand_id";
+		 $stmt = $db->prepare($sql);
+ 
+		 if($stmt->execute())
+		 {
+			 return $stmt->fetch(PDO::FETCH_ASSOC);
+		 }
+		 return false;
+	 }
+	 function delete_brand_by_id($brand_id)
+	{
+		global $db;
+		$sql = "UPDATE brands SET deleted = '1', deleted_timestamp = NOW() WHERE brand_id = :brand_id";
+		$stmt = $db->prepare($sql);
+		$stmt->bindParam(':id', $brand_id, PDO::PARAM_INT);
+
+		if($stmt->execute())
+		{
+			$_SESSION["success_messages"][] = "Deleted Successfully.";
+			return true;
+		}
+		return false;
+	}
+	function edit_brand_by_id($brand_name, $brand_id)
+	{
+		global $db;
+		$sql = "UPDATE brands SET brand_name = :brand_name, modified_timestamp = NOW() WHERE brand_id = :id";
+		$stmt = $db->prepare($sql);
+		$stmt->bindParam(':id', $brand_id, PDO::PARAM_INT);
+		$stmt->bindParam(':brand_name', $brand_name, PDO::PARAM_STR);
+
+		if($stmt->execute())
+		{	
+			$_SESSION["success_messages"][] = "Updated Successfully.";
+			return true;
+		}
+		return false;
+	}
+	 function delete_brand($brand_id)
+	 {
+		 global $db;
+		 $sql = "UPDATE brands SET deleted = '1', deleted_timestamp = NOW() WHERE brand_id = :id";
+		 $stmt = $db->prepare($sql);
+		 $stmt->bindParam(':id', $brand_id, PDO::PARAM_INT);
+ 
+		 if($stmt->execute())
+		 {
+			 $_SESSION["success_messages"][] = "Deleted Successfully.";
+			 return true;
+		 }
+		 return false;
+	 }
+	 function brand_status($disabled, $brand_id)
+	{
+		global $db;
+		$sql = "UPDATE brands SET disabled = '$disabled', modified_timestamp = NOW() WHERE brand_id = :id";
+		$stmt = $db->prepare($sql);
+		$stmt->bindParam(':id', $brand_id, PDO::PARAM_INT);
+
+		if($stmt->execute())
+		{	
+			$_SESSION["success_messages"][] = "Update Successfully.";
+			return true;
+		}
+		return false;
+	}
+	function add_brand_name($data)
+	{
+		global $db;
+		extract($data);
+
+		if (does_brand_already_exist($add_brand) === true)
+		{
+			$_SESSION["error_messages"][] = "This record already exists.";
+		}
+		
+		if (!isset($_SESSION["error_messages"]))
+		{
+			$sql = "INSERT INTO brands (brand_name,disabled,deleted) VALUES (:new_brand_name,'0','0')";
+			$stmt = $db->prepare($sql);
+			$stmt->bindParam(':new_brand_name', $new_brand_name, PDO::PARAM_STR);
+			
+			if ($stmt->execute())
+			{
+				$_SESSION["success_messages"][] = "Brand added Successfully.";
+				return true;
+			}
 		}
 		return false;
 	}
