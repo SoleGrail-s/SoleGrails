@@ -13,12 +13,12 @@
 <div class="card mx-5 border-1 mb-5" style="border-radius: 20px; box-shadow: 10px 5px 1px #ffd900; border-color: #D87300;">
     <div class="row align-middle mx-5 mt-3">
         <div class="col p-3">
-            <a href="/admin/view_products.php" class="txt_dec">
+            <a href="/admin/product/view_products.php" class="txt_dec">
             <button type="button" class=" btn-lg  m-auto fw-bold box_shadow admin_panel_btn" >Inventory</button>
             </a>
         </div>
         <div class="col p-3">
-            <a href="/admin/view_customer.php" class="txt_dec">
+            <a href="/admin/customer/view_customer.php" class="txt_dec">
             <button type="button" class=" btn-lg  m-auto fw-bold box_shadow admin_panel_btn" >View Customers</button>
             </a>
         </div>
@@ -35,7 +35,7 @@
             </a>  
         </div>
         <div class="col p-3">
-            <a href="/admin/add_product.php" class="txt_dec">
+            <a href="/admin/product/add_product.php" class="txt_dec">
             <button type="button"  class=" btn-lg  m-auto fw-bold box_shadow admin_panel_btn">Add product</button>
             </a>
         </div>

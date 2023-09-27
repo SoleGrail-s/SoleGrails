@@ -28,7 +28,7 @@
                     <th class="text-center">Email-Id</th>
                     <th class="text-center">State</th>
                     <th class="text-center">Details</th>
-                    <th class="text-center">Delete</th>
+                    <!-- <th class="text-center">Delete</th> -->
                   </tr>
                 </thead>
                 <tbody>
@@ -45,8 +45,9 @@
                     <td class="text-center"><?php echo $user["alternate_no"]?></td>
                     <td class="text-center"><?php echo $user["email_id"]?></td>
                     <td class="text-center"><?php echo $user["state"]?></td>
-                    <td class="text-center"><i class="fa-solid fa-eye fa-lg view_details" ></i></td>
-                    <td class="text-center"><i class="fa-solid fa-trash-can fa-lg delete_item"></i></td>
+                    <td class="text-center"><a href="/admin/customer/customer_details?user_id=<?php echo $user["user_id"]; ?>"><i class="fa-solid fa-eye fa-lg view_details" ></i></a>
+                      </td>
+                    <!-- <td class="text-center"><i class="fa-solid fa-trash-can fa-lg delete_item"></i></td> -->
                   </tr>
                 </tbody>
                 <?php 

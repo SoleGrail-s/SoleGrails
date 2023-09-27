@@ -409,6 +409,10 @@ font-size:medium;
 .details_section{
   border-bottom-style: solid; border-color: #FFD700; font-size: 30px; 
 }
+/* .customer_details_label{
+  display: block; 
+  color: #5c5c5c;
+} */
 /*==========================================Admin Panel===========================================*/
 
 .admin_panel_btn{

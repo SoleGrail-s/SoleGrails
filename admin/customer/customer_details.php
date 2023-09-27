@@ -2,12 +2,18 @@
 	$page_title = "Customer Details";
     $display_navbar_flag = true;
 	require_once($_SERVER["DOCUMENT_ROOT"]."/includes/init.php");
+
+    if(isset($_GET["user_id"]) && !empty($_GET["user_id"]) && is_numeric($_GET["user_id"]))
+    {
+        $id = trim($_GET["user_id"]);
+        $user=get_user_details_by_passing_id($id);
+    }
 ?>
 <nav class="lora_font ms-5 my-2 " aria-label="breadcrumb lora_font ms-2">
     <ol class="breadcrumb">
-    <li class="breadcrumb-item "><a href="#" class="txt_dec">Home</a></li>
+    <li class="breadcrumb-item "><a href="/admin/index.php" class="txt_dec">Home</a></li>
     <li class="breadcrumb-item " aria-current="page">
-        <a href="/admin/view_customer.php" class="txt_dec">View Customers</a>
+        <a href="/admin/customer/view_customer.php" class="txt_dec">View Customers</a>
     </li>
     <li class="breadcrumb-item" aria-current="page">Customer Details</li>
     </ol>
@@ -21,33 +27,34 @@
             </div>
             <div class="row mx-4 pt-5">
                 <div class="col-md-4">
-                    <p>Customer Id:<input type="number" class="border-0" name="product_id" id="product_id"></p>
+                    <p>Customer Id:
+                    <b class="border-0 text-center text-muted ps-2" name="custome_id" id="custome_id"><?php echo $user["user_id"]; ?></b></p>
                 </div>
                 <div class="col-md-4">
-                    <p>Customer since:<input type="text" class="border-0" name="added_date" id="added_date"></p>
+                    <p>Customer since:<b class="border-0 text-center text-muted ps-2" name="custome_id" id="custome_id"><?php echo $user["created_timestamp"]; ?></b></p></p>
                 </div>
                 <div class="col-md-4">
-                    <p>Profile last updated:<input type="text" class="border-0" name="modified_date" id="modified_date"></p>
+                    <p>Profile last updated:<b class="border-0 text-center text-muted ps-2" name="custome_id" id="custome_id"></b></p>
                 </div>
-                <div class="input-group row px-3">
+                <div class=" row px-3">
                     <label for="" class="my-4 details_section">Basic Details</label>
                     <div class="col">
                         <label style="display: block; color: #5c5c5c;">
                             First Name: 
                         </label>
-                        <input type="text" class="form-control text" style="border-color: #00000084; border-radius: 10px;">
+                        <div><b class="form-control " style="border-color: #00000084; border-radius: 10px;height: 40px; " ><?php echo $user["f_name"]; ?></b></div>
                     </div>
                     <div class="col">
                         <label style="display: block; color: #5c5c5c;">
                             Middle Name:
                         </label>
-                        <input type="text" class="form-control text" style="border-color: #00000084; border-radius: 10px;">
+                        <div><b class="form-control " style="border-color: #00000084; border-radius: 10px;height: 40px; " ><?php echo $user["m_name"]; ?></b></div>
                     </div>
                     <div class="col">
                         <label style="display: block; color: #5c5c5c;">
                             Last Name:
                         </label>
-                        <input type="text" class="form-control text" style="border-color: #00000084; border-radius: 10px;">
+                        <div><b class="form-control " style="border-color: #00000084; border-radius: 10px;height: 40px; " ><?php echo $user["l_name"]; ?></b></div>
                     </div>
                 </div>
                 <div class="input-group row px-3" >
@@ -56,19 +63,19 @@
                         <label style="display: block; color: #5c5c5c;">
                             Phone Number: 
                         </label>
-                        <input type="text" class="form-control text" style="border-color: #00000084; border-radius: 10px;">
+                        <div><b class="form-control " style="border-color: #00000084; border-radius: 10px;height: 40px; "><?php echo $user["contact_no"]; ?></b></div>
                     </div>
                     <div class="col">
                         <label style="display: block; color: #5c5c5c;">
                             Alternate Number:
                         </label>
-                        <input type="text" class="form-control text" style="border-color: #00000084; border-radius: 10px;">
+                        <div><b class="form-control " style="border-color: #00000084; border-radius: 10px;height: 40px; "><?php echo $user["alternate_no"]; ?></b></div>
                     </div>
                     <div class="col">
                         <label style="display: block; color: #5c5c5c;">
                             Email-Id:
                         </label>
-                        <input type="email" class="form-control" style="border-color: #00000084; border-radius: 10px;">
+                        <div><b class="form-control " style="border-color: #00000084; border-radius: 10px;height: 40px; "><?php echo $user["email_id"]; ?></b></div>
                     </div>
                 </div>
                 <div class="input-group row  px-3">
@@ -77,22 +84,23 @@
                         <label  style="display: block; color: #5c5c5c;">
                             Address:
                         </label>
-                        <textarea class="form-control mx-auto no_resize" placeholder="" id="floatingTextarea" style="border-color: #00000084; border-radius: 10px; resize: none;"></textarea>
+                        <!-- <textarea class="form-control mx-auto no_resize" placeholder="" id="floatingTextarea" style="border-color: #00000084; border-radius: 10px; resize: none;"></textarea> -->
+                        <div><b class="form-control " style="border-color: #00000084; border-radius: 10px;height: 40px; "><?php echo $user["address"]; ?></b></div>
                     </div>
                     <div class="col">
                         <label  style="display: block; color: #5c5c5c;">
                             Landmark:
                         </label>
-                        <input type="text" class="form-control text" style="border-color: #00000084; border-radius: 10px;">
+                        <div><b class="form-control " style="border-color: #00000084; border-radius: 10px;height: 40px; "><?php echo $user["landmark"]; ?></b></div>
                     </div>
                     <div class="col">
                         <label style="display: block; color: #5c5c5c;">
                             State:
                         </label>
-                        <input type="text" class="form-control text" style="border-color: #00000084; border-radius: 10px;">
+                        <div><b class="form-control " style="border-color: #00000084; border-radius: 10px;height: 40px; "><?php echo $user["state"]; ?></b></div>
                         <!-- <select class="form-select" size="1" style="border-color: #00000084; border-radius: 10px;" >
                             <option selected>Select your state</option>
-                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option ="Andhra Pradesh">Andhra Pradesh</option>
                             <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                             <option value="Arunachal Pradesh">Arunachal Pradesh</option>
                             <option value="Assam">Assam</option>
@@ -134,20 +142,18 @@
                         <label style="display: block; color: #5c5c5c;">
                             Postalcode:
                         </label>
-                        <input type="text" class="form-control text" style="border-color: #00000084; border-radius: 10px;">
+                        <div><b class="form-control " style="border-color: #00000084; border-radius: 10px;height: 40px; "><?php echo $user["postal_code"]; ?></b></div>
                     </div>
                     <div class="col">
                         <label style="display: block; color: #5c5c5c;">
                             Country:
                         </label>
-                        <fieldset disabled="disabled">
-                            <input type="text"  class="form-control" placeholder="Bharat" style="border-color: #00000084; border-radius: 10px;">
-                        </fieldset>
+                        <div><b class="form-control " style="border-color: #00000084; border-radius: 10px;height: 40px; "><?php echo $user["country"]; ?></b></div>
                     </div>
                 </div>
                 <div class="position-relative my-5 pt-3">
                    
-                    <button type="button" class="btn btn-warning position-absolute bottom-0 end-0 mx-4 confirm_btn" style="border-radius: 30px;"> <i class="fa-regular fa-circle-check pe-2" style="color: #000000;"></i>Confirm</button>
+                    <a href="/admin/customer/view_customer.php" type="button" class="btn btn-warning position-absolute bottom-0 end-0 mx-4 confirm_btn" style="border-radius: 30px;"> <i class="fa-solid fa-xmark pe-1" style="color: #000000;"></i>Cancel</a>
                 </div>
             </div>
         </div>

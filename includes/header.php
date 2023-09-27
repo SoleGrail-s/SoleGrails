@@ -95,7 +95,7 @@
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-    			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+    			<div class="collapse navbar-collapse " id="collapsibleNavbar">
       				<ul class="navbar-nav ms-auto roboto_font me-4">
 					  	<?php if(isset($_SESSION["user_id"]) && ($_SESSION["role"]) && ($_SESSION["role"] === "user")): ?>
 							<li class="nav-item my-auto">

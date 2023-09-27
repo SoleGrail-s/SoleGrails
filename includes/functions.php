@@ -270,4 +270,88 @@ function display_sneakers()
 		}
 		return false;
 	}
+
+	// customer details admin side
+
+	function get_user_details_by_passing_id($id)
+	{
+		global $db;
+		$sql = "SELECT * FROM users_details WHERE user_id = $id";
+		$stmt = $db->prepare($sql);
+		
+		if($stmt->execute())
+		{
+			return $stmt->fetch(PDO::FETCH_ASSOC);
+		}
+		return false;
+	}
+
+
+	// product details admin side 
+	function get_product_details_by_passing_id($id)
+	{
+		global $db;
+		$sql = "SELECT * FROM products WHERE id = $id";
+		$stmt = $db->prepare($sql);
+		
+		if($stmt->execute())
+		{
+			return $stmt->fetch(PDO::FETCH_ASSOC);
+		}
+		return false;
+	}
+
+	function delete_product($product_id)
+	 {
+		 global $db;
+		 $sql = "UPDATE products SET delete_product = '1', deleted_timestamp = NOW() WHERE id = :id";
+		 $stmt = $db->prepare($sql);
+		 $stmt->bindParam(':id', $product_id, PDO::PARAM_INT);
+ 
+		 if($stmt->execute())
+		 {
+			 $_SESSION["success_messages"][] = "Product Deleted Successfully.";
+			 return true;
+		 }
+		 return false;
+	 }
+	 function does_product_already_exist($product)
+	 {
+		 global $db;
+		 $sql = "SELECT COUNT(1) as 'count' FROM products WHERE pro_name = :pro_name AND deleted = '0'";
+		 $stmt = $db->prepare($sql);
+		 $stmt->bindParam(':pro_name', $product, PDO::PARAM_STR);
+ 
+		 if($stmt->execute())
+		 {
+			 $result=$stmt->fetch(PDO::FETCH_ASSOC)["count"];
+			 return $result> 0 ? true : false;
+		 }
+		 return false;
+	 }
+
+	 function add_product($product)
+	{
+		global $db;
+		extract($data);
+
+		if (does_product_already_exist($add_product) === true)
+		{
+			$_SESSION["error_messages"][] = "This record already exists.";
+		}
+		
+		if (!isset($_SESSION["error_messages"]))
+		{
+			$sql = "INSERT INTO products (pro_name,deleted) VALUES (:new_pro_name,'0')";
+			$stmt = $db->prepare($sql);
+			$stmt->bindParam(':new_pro_name', $new_pro_name, PDO::PARAM_STR);
+			
+			if ($stmt->execute())
+			{
+				$_SESSION["success_messages"][] = "Brand added Successfully.";
+				return true;
+			}
+		}
+		return false;
+	}
 ?>

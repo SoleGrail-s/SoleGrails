@@ -15,13 +15,15 @@
             
             </ol>
         </nav>
-        
+        <div class="col-lg-12">
+        <?php require_once($_SERVER["DOCUMENT_ROOT"]."/includes/prompts.php"); ?>
+    </div>
         <div class="justify-content-center mx-auto d-grid " >
           <h1 class="lora_font fw-bold" style=" text-decoration: underline solid #D87300 5px; border-bottom: 8px;">Products</h1>
           
         </div>
         <div class="d-grid justify-content-end mb-3"> 
-          <a href="/admin/add_product.php" class="btn btn-light border border-1 border-dark fw-bold btn-sm"><i class="fa-solid fa-circle-plus fa-lg px-1 " style="color: #000000;"></i>Add Product</a>
+          <a href="/admin/product/add_product.php" class="btn btn-light border border-1 border-dark fw-bold btn-sm"><i class="fa-solid fa-circle-plus fa-lg px-1 " style="color: #000000;"></i>Add Product</a>
         </div>
         <div class="card mb-5">
             <table class="table ">
@@ -55,8 +57,8 @@
                     <td class="text-uppercase text-center"><?php echo $product["brand"]?></td>
                     <td class="text-center"><?php echo $product["release_yr"]?></td>
                     <td class="text-center"><?php echo $product["price"]?></td>
-                    <td class="text-center"><i class="fa-solid fa-eye fa-lg view_details" ></i></td>
-                    <td class="text-center"><i class="fa-solid fa-trash-can fa-lg delete_item"></i></td>
+                    <td class="text-center"><a href="/admin/product/product_details.php?id=<?php echo $product["id"]; ?>"><i class="fa-solid fa-eye fa-lg view_details" ></i></a></td>
+                    <td class="text-center"><a href="/admin/product/delete_product.php?id=<?php echo $product["id"]; ?>"><i class="fa-solid fa-trash-can fa-lg delete_item"></i></a></td>
                   </tr>
                 </tbody>
                 <?php 
