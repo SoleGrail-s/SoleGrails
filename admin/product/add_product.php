@@ -131,30 +131,30 @@
                 </div>
                 <div class=" row mx-4 my-2">
                     <label class="fw-bold ">Description</label>
-                    <input class="form-control mx-auto no_resize mx-3 no_resize" placeholder="Description of porduct" id="floatingTextarea" name="speicification"></input>
+                    <input class="form-control mx-auto no_resize mx-3 no_resize" placeholder="Description of porduct" id="floatingTextarea" name="specification"></input>
 
                 </div>
                 <div class="row mx-4 mb-5 mt-2">
                     <label class="fw-bold">Images</label>
                     <div class="col-md-4 g-4">
                         <label>Left Profile</label>
-                        <input type="file" class="form-control col-md-2" id="l_name" name ="l_name" accept="image/*">
+                        <input type="file" class="form-control col-md-2" id="l_profile" name ="l_profile" accept="image/*">
                     </div >
                     <div class="col-md-4 g-4">
                         <label>Right Profile</label>
-                        <input type="file" class="form-control col-md-2" id="r_name" name ="r_name" accept="image/*">
+                        <input type="file" class="form-control col-md-2" id="r_profile" name ="r_profile" accept="image/*">
                     </div >
                     <div class="col-md-4 g-4">
                         <label>Top Profile</label>
-                        <input type="file" class="form-control col-md-2" id="t_name" name ="t_name" accept="image/*">
+                        <input type="file" class="form-control col-md-2" id="t_profile" name ="t_profile" accept="image/*">
                     </div>
                     <div class="col-md-4 g-4">
                         <label>Full Profile</label>
-                        <input type="file" class="form-control col-md-2" id="full_name" name ="full_name" accept="image/*">
+                        <input type="file" class="form-control col-md-2" id="full_profile" name ="full_profile" accept="image/*">
                     </div>
                     <div class="col-md-4 g-4">
                         <label>Sole</label>
-                        <input type="file" class="form-control col-md-2" id="sole_name" name ="sole_name" accept="image/*">
+                        <input type="file" class="form-control col-md-2" id="sole_profile" name ="sole_profile" accept="image/*">
                     </div>
                 </div>
                 

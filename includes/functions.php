@@ -469,9 +469,8 @@ function display_sneakers()
         $full_profile = upload_image("full_profile", $image_folder);
         $sole_profile = upload_image("sole_profile", $image_folder);
 
-        $sql = "INSERT INTO products (id, pro_name, brand, price, release_yr,  top_type, gender, specification, l_profile, r_profile, t_profile, full_profile, sole_profile, disable_product) VALUES (:id, :pro_name, :brand, :price, :release_yr,  :top_type, :gender, :specification, :l_profile, :r_profile, :t_profile, :full_profile, :sole_profile, '0')";
+        $sql = "INSERT INTO products (pro_name, brand, price, release_yr,  top_type, gender, specification, l_profile, r_profile, t_profile, full_profile, sole_profile, disable_product) VALUES (:pro_name, :brand, :price, :release_yr,  :top_type, :gender, :specification, :l_profile, :r_profile, :t_profile, :full_profile, :sole_profile, '0')";
         $stmt = $db->prepare($sql);
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->bindParam(':pro_name', $pro_name, PDO::PARAM_STR);
         $stmt->bindParam(':brand', $brand, PDO::PARAM_STR);
         $stmt->bindParam(':price', $price, PDO::PARAM_INT);
@@ -509,5 +508,43 @@ function upload_image($input_name, $image_folder)
     }
     return null;
 }
+
+	function edit_product($id, $pro_name, $brand, $price, $release_yr, $top_type, $gender, $specification, $l_profile, $r_profile, $t_profile, $full_profile, $sole_profile)
+	{
+		global $db;
+
+		if (!isset($_SESSION["error_messages"])) {
+			$image_folder = "C:/xampp/htdocs/SoleGrails/assets/img/";
+	
+			$l_profile = upload_image("l_profile", $image_folder);
+			$r_profile = upload_image("r_profile", $image_folder);
+			$t_profile = upload_image("t_profile", $image_folder);
+			$full_profile = upload_image("full_profile", $image_folder);
+			$sole_profile = upload_image("sole_profile", $image_folder);
+			
+			$sql = "UPDATE products SET pro_name = :pro_name, brand = :brand, price = :price, release_yr = :release_yr, top_type = :top_type, gender = :gender, specification = :specification, l_profile = :l_profile, r_profile = :r_profile, t_profile = :t_profile, full_profile = :full_profile, sole_profile = :sole_profile, modified_timestamp = NOW() WHERE id = :id";
+			$stmt = $db->prepare($sql);
+			$stmt->bindParam(':id', $id, PDO::PARAM_INT);
+			$stmt->bindParam(':pro_name', $pro_name, PDO::PARAM_STR);
+			$stmt->bindParam(':brand', $brand, PDO::PARAM_STR);
+			$stmt->bindParam(':price', $price, PDO::PARAM_INT);
+			$stmt->bindParam(':release_yr', $release_yr, PDO::PARAM_INT);
+			// $stmt->bindParam(':sizes', $sizes, PDO::PARAM_STR);
+			$stmt->bindParam(':top_type', $top_type, PDO::PARAM_STR);
+			$stmt->bindParam(':gender', $gender, PDO::PARAM_STR);
+			$stmt->bindParam(':specification', $specification, PDO::PARAM_STR);
+			$stmt->bindParam(':l_profile', $l_profile, PDO::PARAM_STR);
+			$stmt->bindParam(':r_profile', $r_profile, PDO::PARAM_STR);
+			$stmt->bindParam(':t_profile', $t_profile, PDO::PARAM_STR);
+			$stmt->bindParam(':full_profile', $full_profile, PDO::PARAM_STR);
+			$stmt->bindParam(':sole_profile', $sole_profile, PDO::PARAM_STR);
+	
+			if ($stmt->execute()) {
+				$_SESSION["success_messages"][] = "Product Updated Successfully.";
+				return true;
+			}
+		}
+		return false;
+	}
 
 ?>
