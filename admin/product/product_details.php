@@ -74,7 +74,7 @@
                 <label style="color: #5c5c5c;">
                 Type 
                 </label>
-                <div><b class="form-control " style="border-color: #00000084; border-radius: 10px;height: 40px; " ><?php echo $product["type"]; ?></b>
+                <div><b class="form-control " style="border-color: #00000084; border-radius: 10px;height: 40px; " ><?php echo $product["top_type"]; ?></b>
                 </div>
             </div>
             <div class=" col-md-2">

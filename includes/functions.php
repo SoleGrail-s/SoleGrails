@@ -330,12 +330,12 @@ function display_sneakers()
 		 return false;
 	 }
 
-	 function add_product($product)
+	 function add_sfdproduct($product)
 	{
 		global $db;
 		extract($data);
 
-		if (does_product_already_exist($add_product) === true)
+		if (does_product_already_exist($add_sdcscproduct) === true)
 		{
 			$_SESSION["error_messages"][] = "This record already exists.";
 		}
@@ -354,4 +354,160 @@ function display_sneakers()
 		}
 		return false;
 	}
+	function get_top_type()
+ 	{
+  		global $db;
+  		$sql = "SELECT * FROM top_types";
+ 	 	$stmt = $db->prepare($sql);
+  		
+		if($stmt->execute())
+  		{
+   			return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  		}
+  		return false;
+ 	}
+	 function get_gender()
+ 	{
+  		global $db;
+  		$sql = "SELECT * FROM gender";
+ 	 	$stmt = $db->prepare($sql);
+  		
+		if($stmt->execute())
+  		{
+   			return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  		}
+  		return false;
+ 	}
+	 function get_release_yr()
+ 	{
+  		global $db;
+  		$sql = "SELECT * FROM release_yr";
+ 	 	$stmt = $db->prepare($sql);
+  		
+		if($stmt->execute())
+  		{
+   			return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  		}
+  		return false;
+ 	}
+
+	 function get_sizes()
+ 	{
+  		global $db;
+  		$sql = "SELECT * FROM sizes";
+ 	 	$stmt = $db->prepare($sql);
+  		
+		if($stmt->execute())
+  		{
+   			return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  		}
+  		return false;
+ 	}
+	//  function add_product($data)
+	//  {
+	// 	 global $db;
+	// 	 extract($data);
+	// 	 if(!isset($_SESSION["error_messages"]))
+	// 	 {
+	// 		 $file_name1 = $_FILES["l_profile"]["name"];
+	// 		 $temp_name1 = $_FILES["l_profile"]["tmp_name"];
+	// 		 $folder1 = "C:/xampp/htdocs/SoleGrails/assets/img".$file_name1;
+	// 		 move_uploaded_file($temp_name1, $folder1);
+ 
+	// 		 $file_name2 = $_FILES["r_profile"]["name"];
+	// 		 $temp_name2 = $_FILES["r_profile"]["tmp_name"];
+	// 		 $folder2 = "C:/xampp/htdocs/SoleGrails/assets/img".$file_name2;
+	// 		 move_uploaded_file($temp_name2, $folder2);
+
+	// 		 $file_name3 = $_FILES["t_profile"]["name"];
+	// 		 $temp_name3 = $_FILES["t_profile"]["tmp_name"];
+	// 		 $folder3 = "C:/xampp/htdocs/SoleGrails/assets/img".$file_name3;
+	// 		 move_uploaded_file($temp_name3, $folder3);
+
+	// 		 $file_name4 = $_FILES["full_profile"]["name"];
+	// 		 $temp_name4 = $_FILES["full_profile"]["tmp_name"];
+	// 		 $folder4= "C:/xampp/htdocs/SoleGrails/assets/img".$file_name4;
+	// 		 move_uploaded_file($temp_name4, $folder4);
+
+	// 		 $file_name5 = $_FILES["sole_profile"]["name"];
+	// 		 $temp_name5 = $_FILES["sole_profile"]["tmp_name"];
+	// 		 $folder5 = "C:/xampp/htdocs/SoleGrails/assets/img".$file_name5;
+	// 		 move_uploaded_file($temp_name5, $folder5);
+ 
+	// 		 $sql = "INSERT INTO products (id, pro_name, brand, price, release_yr, sizes, top_type,  gender, specification, l_profile, r_profile, t_profile, full_profile, sole_profile, disable_product) VALUES (:id, :pro_name, :brand, :price, :release_yr, :sizes, :top_type, :gender, :specification, '$folder1', '$folder2', '$folder3', '$folder4', '$folder5', '0')";
+	// 		 $stmt = $db->prepare($sql);
+	// 		 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+	// 		 $stmt->bindParam(':pro_name', $pro_name, PDO::PARAM_STR);
+	// 		 $stmt->bindParam(':brand', $brand, PDO::PARAM_STR);
+	// 		 $stmt->bindParam(':price', $price, PDO::PARAM_INT);
+	// 		 $stmt->bindParam(':release_yr', $release_yr, PDO::PARAM_INT);
+	// 		 $stmt->bindParam(':sizes', $sizes, PDO::PARAM_STR);
+	// 		 $stmt->bindParam(':top_type', $top_type, PDO::PARAM_STR);
+	// 		 $stmt->bindParam(':gender', $gender, PDO::PARAM_STR);
+	// 		 $stmt->bindParam(':specification', $specification, PDO::PARAM_STR);
+			 
+	// 		 if($stmt->execute())
+	// 		 {
+	// 			 $_SESSION["success_messages"][] = "Product Uploaded Successfully.";
+	// 			 return true;
+	// 		 }
+	// 	 }
+	// 	 return false;
+	//  }
+
+	function add_product($data)
+{
+    global $db;
+    extract($data);
+    
+    if (!isset($_SESSION["error_messages"])) {
+        $image_folder = "C:/xampp/htdocs/SoleGrails/assets/img/";
+
+        $l_profile = upload_image("l_profile", $image_folder);
+        $r_profile = upload_image("r_profile", $image_folder);
+        $t_profile = upload_image("t_profile", $image_folder);
+        $full_profile = upload_image("full_profile", $image_folder);
+        $sole_profile = upload_image("sole_profile", $image_folder);
+
+        $sql = "INSERT INTO products (id, pro_name, brand, price, release_yr,  top_type, gender, specification, l_profile, r_profile, t_profile, full_profile, sole_profile, disable_product) VALUES (:id, :pro_name, :brand, :price, :release_yr,  :top_type, :gender, :specification, :l_profile, :r_profile, :t_profile, :full_profile, :sole_profile, '0')";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':pro_name', $pro_name, PDO::PARAM_STR);
+        $stmt->bindParam(':brand', $brand, PDO::PARAM_STR);
+        $stmt->bindParam(':price', $price, PDO::PARAM_INT);
+        $stmt->bindParam(':release_yr', $release_yr, PDO::PARAM_INT);
+        // $stmt->bindParam(':sizes', $sizes, PDO::PARAM_STR);
+        $stmt->bindParam(':top_type', $top_type, PDO::PARAM_STR);
+        $stmt->bindParam(':gender', $gender, PDO::PARAM_STR);
+        $stmt->bindParam(':specification', $specification, PDO::PARAM_STR);
+        $stmt->bindParam(':l_profile', $l_profile, PDO::PARAM_STR);
+        $stmt->bindParam(':r_profile', $r_profile, PDO::PARAM_STR);
+        $stmt->bindParam(':t_profile', $t_profile, PDO::PARAM_STR);
+        $stmt->bindParam(':full_profile', $full_profile, PDO::PARAM_STR);
+        $stmt->bindParam(':sole_profile', $sole_profile, PDO::PARAM_STR);
+
+        if ($stmt->execute()) {
+            $_SESSION["success_messages"][] = "Product Uploaded Successfully.";
+            return true;
+        }
+    }
+    return false;
+}
+
+function upload_image($input_name, $image_folder)
+{
+    if (isset($_FILES[$input_name]) && !empty($_FILES[$input_name]["name"])) {
+        $file_name = $_FILES[$input_name]["name"];
+        $temp_name = $_FILES[$input_name]["tmp_name"];
+        $target_path = $image_folder . $file_name;
+
+        if (move_uploaded_file($temp_name, $target_path)) {
+            return $target_path;
+        } else {
+            $_SESSION["error_messages"][] = "Failed to upload $input_name image.";
+        }
+    }
+    return null;
+}
+
 ?>
