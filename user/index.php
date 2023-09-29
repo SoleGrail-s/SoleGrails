@@ -2,15 +2,37 @@
 $page_title = "Profile";
 $display_navbar_flag = true;
 require_once($_SERVER["DOCUMENT_ROOT"] . "/includes/init.php");
+
+$user_info = display_user_details_by_id();
+if (isset($_POST["update_user_basic_details"])) {
+    update_user_profile_detail($_POST);
+    redirect_to_current_page();
+} elseif (isset($_POST["update_user_contact_&_add_details"])) {
+    update_user_address_detail($_POST);
+    redirect_to_current_page();
+}
+
 ?>
+<div class="row mx-5">
+    <div class="col-lg-12">
+        <?php require_once($_SERVER["DOCUMENT_ROOT"] . "/includes/prompts.php"); ?>
+    </div>
+</div>
 <div class="card m-5 border-1"
-    style="border-radius: 100px;  background-color: #ffd9007b; box-shadow: 5px 5px 15px #818181; border: 1px solid #D87300;">
+    style=" background-color: #ffd9007b; box-shadow: 5px 5px 15px #818181; border: 1px solid #D87300;">
     <div class="float-start p-3 ">
-        <img src="https://th.bing.com/th/id/OIP.Sr4fxChDzgG6T-SG4zCS8wHaHa?pid=ImgDet&rs=1" class="float-start mx-auto"
-            alt="..." style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #D87300;">
+        <!-- <img src="" class="float-start mx-auto"
+            style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #D87300;"> -->
+        <div class="float-start text-uppercase lora_font "
+            style="background-color: #cccccc; width: 100px; height: 100px; border-radius: 50%; border: 3px solid #D87300; align-item: middle;">
+            <h1 class="text-center my-4 fw-bold text-dark">
+                <?php echo substr($user_info["f_name"], 0, 1) ?>
+            </h1>
+        </div>
         <label class="ms-5 mx-auto my-4 fw-bold "
-            style="vertical-align: middle ; font-family: 'Lora', sans-serif; font-size: 30px;">Welcome, Kartik
-            Kunder</label>
+            style="vertical-align: middle ; font-family: 'Lora', sans-serif; font-size: 30px;">Welcome,
+            <?php echo $user_info["f_name"], " ", $user_info["l_name"] ?>
+        </label>
     </div>
 </div>
 <div class="card m-5 user_profile_card box_shadow" style="">
@@ -23,52 +45,60 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/includes/init.php");
                 type="button" role="tab" aria-controls="nav-profile" aria-selected="false"
                 style="color: #000000">Contact & Address</button>
             <button class="nav-link  fw-bold  " id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
-                type="button" role="tab" aria-controls="nav-contact" aria-selected="false" style="color: #000000">Reset
+                type="button" role="tab" aria-controls="nav-contact" aria-selected="false" style="color: #000000">Change
                 Password</button>
         </div>
     </nav>
     <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active pt-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-            <form action="">
+            <form role="form" action="<?php echo get_action_attr_value_for_current_page(); ?>" method="post"
+                enctype="multipart/form-data">
+
                 <div class="row">
                     <div class="col-md-4 px-5 pb-3 ">
-                        <label class="px-3 user_profile_txt">
+                        <label class="px-3 user_profile_txt" for="f_name">
                             First Name
                         </label>
-                        <input type="text " class="form-control text user_profile_fields box_shadow " required>
+                        <input type="text " class="form-control text user_profile_fields box_shadow " id="f_name"
+                            name="f_name" value="<?php echo $user_info["f_name"] ?>" required>
                     </div>
                     <div class="col-md-4 px-5 pb-3">
-                        <label class="px-3 user_profile_txt">
+                        <label class="px-3 user_profile_txt" for="m_name">
                             Middle Name
                         </label>
-                        <input type="text" class="form-control text user_profile_fields box_shadow ">
+                        <input type="text" class="form-control text user_profile_fields box_shadow " id="m_name"
+                            name="m_name" value="<?php echo $user_info["m_name"] ?>">
                     </div>
                     <div class="col-md-4 px-5 pb-3">
-                        <label class="px-3 user_profile_txt">
+                        <label class="px-3 user_profile_txt" for="l_name">
                             Last Name
                         </label>
-                        <input type="text" class="form-control text user_profile_fields box_shadow " required>
+                        <input type="text" class="form-control text user_profile_fields box_shadow " id="l_name"
+                            name="l_name" value="<?php echo $user_info["l_name"] ?>" required>
                     </div>
                 </div>
                 <div class="row pb">
                     <div class="col-6 ps-5 pb-3 ">
-                        <label class="px-3 user_profile_txt">
+                        <label class="px-3 user_profile_txt " for="dob">
                             Date of Birth
                         </label>
-                        <input type="date " class="form-control text user_profile_fields box_shadow "
-                            style="max-width: fit-content;" required>
+                        <input type="date" class="form-control text user_profile_fields box_shadow "
+                            style="max-width: fit-content;" id="dob" name="dob" value="<?php echo $user_info["dob"] ?>"
+                            required>
                     </div>
                     <div class="col-6 pe-5 pb-3">
-                        <label class="px-3 user_profile_txt">
+                        <label class="px-3 user_profile_txt" for="gender">
                             Gender
                         </label>
                         <input type="text" class="form-control text user_profile_fields box_shadow "
-                            style="max-width: fit-content;" required>
+                            style="max-width: fit-content;" id="gender" name="gender"
+                            value="<?php echo $user_info["gender"] ?>" required>
                     </div>
 
                 </div>
                 <div class="mx-auto d-grid py-5" style="max-width: fit-content;">
-                    <button type="button" class="btn btn-warning fw-bold update_btn box_shadow "><i
+                    <button type="submit" class="btn btn-warning fw-bold update_btn box_shadow "
+                        name="update_user_basic_details" id="update_user_basic_details"><i
                             class="fa-regular fa-circle-check fa-lg px-1" style="color: #000000;"></i>Update
                         Profile</button>
                 </div>
@@ -80,70 +110,78 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/includes/init.php");
             <form action="">
                 <div class="row">
                     <div class="col-md-4 px-5 pb-3 ">
-                        <label class="px-3 user_profile_txt">
+                        <label class="px-3 user_profile_txt" for="contact_no">
                             Phone Number
                         </label>
-                        <input type="number " class="form-control text user_profile_fields box_shadow " required>
+                        <input type="number " class="form-control text user_profile_fields box_shadow " id="contact_no"
+                            name="contact_no" value="<?php echo $user_info["contact_no"] ?>" required>
                     </div>
                     <div class="col-md-4 px-5 pb-3">
-                        <label class="px-3 user_profile_txt">
+                        <label class="px-3 user_profile_txt" for="alternate_no">
                             Alternate Number
                         </label>
-                        <input type="number" class="form-control text user_profile_fields box_shadow">
+                        <input type="number" class="form-control text user_profile_fields box_shadow" id="alternate_no"
+                            name="alternate_no" value="<?php echo $user_info["alternate_no"] ?>">
                     </div>
                     <div class="col-md-4 px-5 pb-3">
-                        <label class="px-3 user_profile_txt">
+                        <label class="px-3 user_profile_txt" for="email_id">
                             Email-Id
                         </label>
-                        <input type="email" class="form-control text user_profile_fields box_shadow" required>
+                        <input type="email" class="form-control text user_profile_fields box_shadow" id="email_id"
+                            name="email_id" value="<?php echo $user_info["email_id"] ?>" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col px-5 pb-3">
-                        <label class="px-3 user_profile_txt">
+                        <label class="px-3 user_profile_txt" for="address">
                             Address:
                         </label>
                         <textarea class="form-control mx-auto no_resize user_profile_fields box_shadow " placeholder=""
-                            id="floatingTextarea" rows="5"></textarea>
+                            id="address" name="address" rows="5"><?php echo $user_info["address"] ?></textarea>
                     </div>
                 </div>
                 <div class="row mx-auto">
                     <div class="col-md-3 px-5 pb-3 ">
-                        <label class="px-3 user_profile_txt">
+                        <label class="px-3 user_profile_txt" for="landmark">
                             Land Mark
                         </label>
                         <input type="text" class="form-control text user_profile_fields box_shadow"
-                            style="max-width: fit-content;" required>
+                            style="max-width: fit-content;" id="landmark" name="landmark"
+                            value="<?php echo $user_info["landmark"] ?>" required>
                     </div>
                     <div class="col-md-3 px-5 pb-3">
-                        <label class="px-3 user_profile_txt">
+                        <label class="px-3 user_profile_txt" for="postal_code">
                             Postal Code
                         </label>
                         <input type="text" class="form-control text user_profile_fields box_shadow"
-                            style="max-width: fit-content;" required>
+                            style="max-width: fit-content;" id="postal_code" name="postal_code"
+                            value="<?php echo $user_info["postal_code"] ?>" required>
                     </div>
                     <div class="col-md-3  px-5 pb-3">
-                        <label class="px-3 user_profile_txt">
+                        <label class="px-3 user_profile_txt" for="state">
                             State
                         </label>
                         <input type="text" class="form-control text user_profile_fields box_shadow"
-                            style="max-width: fit-content;" required>
+                            style="max-width: fit-content;" id="state" name="state"
+                            value="<?php echo $user_info["state"] ?>" required>
 
                     </div>
                     <div class="col-md-3 px-5 pb-3">
-                        <label class="px-3 user_profile_txt">
+                        <label class="px-3 user_profile_txt" for="country">
                             Country
                         </label>
                         <input type="text" class="form-control text user_profile_fields box_shadow"
-                            style="max-width: fit-content;" placeholder="Bharat" disabled>
+                            style="max-width: fit-content;" id="country" name="country"
+                            value="<?php echo $user_info["country"] ?>" disabled>
                     </div>
 
                 </div>
                 <div class="mx-auto d-grid py-5" style="max-width: fit-content;">
 
-                    <button type="button" class="btn btn-warning fw-bold update_btn box_shadow "><i
+                    <button type="submit" class="btn btn-warning fw-bold update_btn box_shadow "
+                        name="update_user_contact_&_add_details" id="update_user_contact_&_add_details"><i
                             class="fa-regular fa-circle-check fa-lg px-1" style="color: #000000;"></i>Update
-                        Profile</button>
+                        contact & address</button>
                 </div>
 
             </form>
@@ -152,25 +190,25 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/includes/init.php");
         <div class="tab-pane fade pt-4" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
             <div class="row text-center">
                 <div class="col-md-12 px-3 py-3 mx-auto d-grid ">
-                    <label class="px-3 user_profile_txt">
+                    <label class="px-3 user_profile_txt" for="n_password">
                         New Password
                     </label>
                     <input type="password"
                         class="form-control text-center user_profile_fields box_shadow mx-auto d-grid reset_pass_fields"
-                        required>
+                        id="n_password" name="n_password" required>
                 </div>
                 <div class="col-md-12  px-3 py-3 mx-auto d-grid">
-                    <label class="px-3 user_profile_txt">
+                    <label class="px-3 user_profile_txt" for="c_password">
                         Confirm Password
                     </label>
                     <input type="password"
                         class="form-control text-center user_profile_fields box_shadow reset_pass_fields mx-auto d-grid"
-                        required>
+                        id="c_password" name="c_password" required>
                 </div>
             </div>
             <div class="mx-auto d-grid py-5" style="max-width: fit-content;">
                 <button type="button" class="btn btn-success  fw-bold update_btn box_shadow"><i
-                        class="fa-solid fa-arrow-rotate-left fa-lg px-2" style="color: #000000;"></i>Reset
+                        class="fa-solid fa-arrow-rotate-left fa-lg px-2" style="color: #000000;"></i>Change
                     Password</button>
             </div>
         </div>

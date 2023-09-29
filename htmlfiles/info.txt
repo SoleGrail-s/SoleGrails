@@ -6,6 +6,8 @@ Lime	#00FF00	(0,255,0)
 Blue	#0000FF	(0,0,255)
 Yellow	#FFFF00	(255,255,0)
 
+
+https://th.bing.com/th/id/OIP.Sr4fxChDzgG6T-SG4zCS8wHaHa?pid=ImgDet&rs=1
 rupee icon <i class="fa-solid fa-indian-rupee-sign" style="color: #000000;"></i>
 
 .scrollable-content {

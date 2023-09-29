@@ -320,7 +320,14 @@
   input[type="checkbox"]:checked:after {
     display: block;S
   } */
-
+.no_undrline_link {
+  color: #000000;
+  text-decoration: none !important;
+}
+.no_undrline_link:hover {
+  color: #000000;
+  text-decoration: none !important;
+}
 .filter_section {
   border-radius: 30px;
 }
