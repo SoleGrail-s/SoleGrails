@@ -161,6 +161,8 @@
                 <div class="position-relative my-5 ">
                    
                     <button type="submit" value="POST" class="btn btn-warning position-absolute bottom-0 end-0 mx-4 confirm_btn" style="border-radius: 30px;" name="add_product"> <i class="fa-regular fa-circle-check pe-2" style="color: #000000;"></i>Confirm</button>
+                    <a type="button" class="btn btn-secondary bottom-0 start-0 mx-5" href="/admin/product/view_products.php"><i class="fa-solid fa-warehouse px-2" style="color: #ffffff;"></i>Inventory</a>
+                    
                 </div>
             </div>
         </form>

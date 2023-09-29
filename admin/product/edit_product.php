@@ -44,7 +44,8 @@
             </div>
             <form role="form" action="<?php echo get_action_attr_value_for_current_page().'?q='.$id?>" method="post" enctype="multipart/form-data">
                 <div class="card mt-2 mb-5 mx-5" style="border-radius: 50px; box-shadow: 10px 10px 50px rgb(129, 129, 129);">
-                    <div class=" fw-bold mx-auto d-grid  mt-3" style="font-size: 40px; text-decoration: underline solid #D87300 5px; border-bottom: 8px;">
+                <!-- style="font-size: 40px; text-decoration: underline solid #D87300 5px; border-bottom: 8px;" -->
+                    <div class=" fw-bold mx-auto d-grid  mt-3 card_title" >
                         Edit Product
                     </div>
                     <div class="row mx-4 pt-5">
@@ -167,6 +168,7 @@
                     <div class="position-relative my-5 ">
                     
                         <button type="submit" class="btn btn-warning position-absolute bottom-0 end-0 mx-4 confirm_btn" id="edit_product" name="edit_product" style="border-radius: 30px;"> <i class="fa-regular fa-circle-check pe-2" style="color: #000000;"></i>Confirm</button>
+                        <a type="button" class="btn btn-secondary bottom-0 start-0 mx-5" href="/admin/product/view_products.php"><i class="fa-solid fa-warehouse px-2" style="color: #ffffff;"></i>Inventory</a>
                     </div>
                 </div>
             </form>
