@@ -78,29 +78,49 @@
 					}
 					?>
 					<?php if ($display_navbar_flag === true): ?>
-						<?php if ($page_title === 'Login' || $page_title === 'Registration' || $page_title === 'Customer Details'): ?>
-							<nav class="navbar navbar-expand-sm primary_navbar ">
+						<?php if ($page_title === 'Login' || $page_title === 'Registration'): ?>
+							<nav class="navbar navbar-expand-sm primary_navbar2 ">
 								<div class="container-fluid">
-									<a class="ms-3 navbar-brand" href="/index.php">
+									<!-- <a class="ms-3 navbar-brand" href="/index.php">
 										<h3 class="lora_font fw-bolder brand_name ms-4">SoleGrail's</h3>
-									</a>
-									<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+									</a> -->
+									<div class="row text-center mx-auto border-bottom-3">
+										<!-- <h3 class="lora_font fw-bolder brand_name">SoleGrail's</h3> -->
+										<a class="ms-3 navbar-brand brand_name" href="/index.php">
+											<h3 class="lora_font fw-bolder brand_name ms-4 txt_shadow">SoleGrail's</h3>
+										</a>
+										<div class="col-3 white_r    ms-0 pe-2"></div>
+										<div class="col-3 black_r   pe-2"></div>
+										<div class="col-3 orange_r  pe-2 "></div>
+										<div class="col-3 yellow_r  pe-2 "></div>
+									</div>
+									<!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 										data-bs-target="#mynavbar">
 										<span class="navbar-toggler-icon"></span>
-									</button>
+									</button> -->
 								</div>
 							</nav>
 						<?php else: ?>
-							<nav class="navbar navbar-expand-sm primary_navbar  navbar-dark">
+							<nav class="navbar navbar-expand-sm primary_navbar  ">
 								<div class="container-fluid">
-									<a class="ms-3 navbar-brand" href="/index.php">
+									<!-- <a class="ms-3 navbar-brand" href="/index.php">
 										<h3 class="lora_font fw-bolder brand_name ms-4">SoleGrail's</h3>
 									</a>
 									<div class="row">
-										<div class="col"></div>
-										<div class="col"></div>
-										<div class="col"></div>
-										<div class="col"></div>
+										<div class="col white_r"></div>
+										<div class="col black_r"></div>
+										<div class="col orange_r"></div>
+										<div class="col yellow_r"></div>
+									</div> -->
+									<div class="row text-center mx-auto border-bottom-3">
+										<!-- <h3 class="lora_font fw-bolder brand_name">SoleGrail's</h3> -->
+										<a class="ms-3 navbar-brand brand_name" href="/index.php">
+											<h3 class="lora_font fw-bolder brand_name ms-4 txt_shadow">SoleGrail's</h3>
+										</a>
+										<div class="col-3 white_r    ms-0 pe-2"></div>
+										<div class="col-3 black_r   pe-2"></div>
+										<div class="col-3 orange_r  pe-2 "></div>
+										<div class="col-3 yellow_r  pe-2 "></div>
 									</div>
 									<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 										data-bs-target="#collapsibleNavbar">

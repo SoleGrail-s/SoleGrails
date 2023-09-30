@@ -178,3 +178,109 @@ rupee icon <i class="fa-solid fa-indian-rupee-sign" style="color: #000000;"></i>
                     <td class=""><i class="fa-solid fa-eye" style="color: #7d7d7d;"></i></td>
                     <td><i class="fa-solid fa-trash-can" style="color: #7d7d7d;"></i></td>
                   </tr> -->
+
+
+
+                  placeholder color
+
+
+                  /* register placeholder  */
+::placeholder .register_placeholder {
+  color: #000000;
+  opacity: 5; /* Firefox */
+}
+
+:-ms-input-placeholder .register_placeholder {
+  /* Internet Explorer 10-11 */
+  color: #000000;
+}
+
+::-ms-input-placeholder .register_placeholder {
+  /* Microsoft Edge */
+  color: #000000;
+}
+/* login placeholder */
+::placeholder,
+.login_placeholder {
+  color: #848484;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder,
+.login_placeholder {
+  /* Internet Explorer 10-11 */
+  color: #000000;
+}
+
+::-ms-input-placeholder,
+.login_placeholder {
+  /* Microsoft Edge */
+  color: #000000;
+}
+
+
+
+all commented text
+
+<!-- <textarea class="form-control mx-auto no_resize" placeholder="" id="floatingTextarea" style="border-color: #00000084; border-radius: 10px; resize: none;"></textarea> -->
+
+
+
+        <!-- <div class="row mx-4 pt-5">
+                    <div class="col-md-4">
+                        <p>Product Id:<input type="number" class="border-0 " name="product_id" id="product_id"></p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>Added Date:<input type="text" class="border-0" name="added_date" id="added_date"></p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>Modified Date:<input type="text" class="border-0" name="modified_date" id="modified_date"></p>
+                    </div>
+                   
+                </div> -->
+        <!-- <div class="row mx-4 pt-5">
+                    <div class="col-md-8 form-floating gx-4">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com"> -->
+        <!-- placeholder should be given otherwise it may not display -->
+        <!-- <label for="floatingInput">Product Name</label>
+                    </div>
+                    <div class="col-md-4 align-content-center gx-4" style="color: #818181;">
+                        <label></label><i class="fa-solid fa-circle-info "></i>  Name should not exceed 20 character</label>
+                    </div>
+                </div> -->
+        <!-- <div > -->
+        <!-- <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com"> -->
+        <!-- placeholder should be given otherwise it may not display -->
+        <!-- <label for="floatingInput">Product Name</label>
+                        >
+
+                    </div> -->
+
+
+                     <!-- <div class="row align-middle mx-5">
+        <div class="col p-3">
+            <a href="" class="txt_dec">
+            <button type="button" class=" btn-lg  m-auto fw-bold box_shadow admin_panel_btn">Add fields</button>
+            </a>  
+        </div>
+        <div class="col p-3">
+            <a href="/admin/add_product.php" class="txt_dec">
+            <button type="button"  class=" btn-lg  m-auto fw-bold box_shadow admin_panel_btn">Add product</button>
+            </a>
+        </div>
+        <div class="col p-3">
+            <a href="" class="txt_dec">
+            <button type="button" class=" btn-lg  m-auto fw-bold box_shadow admin_panel_btn">Transaction Monitoring</button>
+            </a>
+        </div>
+    </div> 
+    <div class="p-3 mb-3">
+    <a href="" class="txt_dec">
+    <button type="button" class=" btn-lg  m-auto fw-bold box_shadow admin_panel_btn">Feedback</button>
+    </a> -->
+
+        <!-- <div class="col p-3">
+            <a href="" class="txt_dec">
+            <button type="button" class=" btn-lg  m-auto fw-bold box_shadow admin_panel_btn"></button>
+            </a>
+        </div> -->

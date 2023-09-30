@@ -9,8 +9,9 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/includes/init.php");
         <?php foreach ($sneakers as $sneaker): ?>
             <div class=" col-sm-6  ">
                 <div class="card">
-                    <a href="/explore/sneaker_details.php?q=<?php echo $sneaker["id"]; ?>" target="_blank">
-                        <div class="row txt_dec">
+                    <a href="/explore/sneaker_details.php?q=<?php echo $sneaker["id"]; ?>"
+                        class="text-decoration-none text-dark">
+                        <div class="row ">
                             <div class="col-md-5 position-relative">
                                 <?php if ($sneaker["l_profile"] > 0): ?>
                                     <img src="<?php echo substr($sneaker["l_profile"], 26); ?>"
@@ -40,9 +41,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/includes/init.php");
                                                 <?php echo ($sneaker["price"]); ?>
                                             </i></button>
                                     </div>
-                                    <div class="col-6 text-center my-auto ">
-                                        <i class="fa-solid fa-cart-shopping fa-xl addtocart_icon"></i>
-                                    </div>
+
                                 </div>
                             </div>
 

@@ -4,10 +4,10 @@
   <!-- Section: Social media -->
   <section class="d-flex justify-content-between p-2" style="background-color: #494949">
     <!-- Left -->
-    <div class="m-auto text-center ">
+    <!-- <div class="m-auto text-center ">
       <button class="text-uppercase border-0 " style="background: transparent ;" class="btn-block" type="button"
         onclick="topFunction()" id="taketotopBtn">Take me to top</button>
-    </div>
+    </div> -->
 
   </section>
   <section class="">
@@ -51,18 +51,24 @@
           <!-- Links -->
           <h6 class="text-uppercase fw-bold">Useful links</h6>
           <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 80px; background-color:  #ffffff; height: 3px" />
-          <p>
-            <a href="#!" class="text-white">Your Account</a>
-          </p>
-          <p>
+          <?php if (isset($_SESSION["user_id"]) && ($_SESSION["role"]) && ($_SESSION["role"] === "user") && ($_SESSION["role"] === "admin")): ?>
+            <p>
+              <a href="/user/index.php" class="text-white">Your Account</a>
+            </p>
+          <?php else: ?>
+            <p>
+              <a href="/login/login.php" class="text-white">Your Account</a>
+            </p>
+          <?php endif ?>
+          <!-- <p>
             <a href="#!" class="text-white">OrderStatus</a>
-          </p>
-          <p>
+          </p> -->
+          <!-- <p>
             <a href="#!" class="text-white">Become an Affiliate</a>
           </p>
           <p>
             <a href="#!" class="text-white">Shipping Rates</a>
-          </p>
+          </p> -->
           <p>
             <a href="#!" class="text-white">Help</a>
           </p>
