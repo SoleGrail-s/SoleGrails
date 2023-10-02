@@ -39,7 +39,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/includes/init.php");
           <th class="text-center">Release Year</th>
           <th class="text-center">Price</th>
           <th class="text-center">Details</th>
-          <!-- <th class="text-center">Delete</th> -->
+          <th class="text-center">Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -74,8 +74,8 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/includes/init.php");
               </td>
               <td class="text-center"><a href="/admin/product/product_details.php?id=<?php echo $product["id"]; ?>"><i
                     class="fa-solid fa-eye fa-lg view_details"></i></a></td>
-              <!-- <td class="text-center"><a href="/admin/product/delete_product.php?id=<?php echo $product["id"]; ?>"><i
-                    class="fa-solid fa-trash-can fa-lg delete_item"></i></a></td> -->
+              <td class="text-center"><a href="/admin/product/delete_product.php?q=<?php echo $product["id"]; ?>"><i
+                    class="fa-solid fa-trash-can fa-lg delete_item"></i></a></td>
             </tr>
           </tbody>
           <?php

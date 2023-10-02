@@ -134,7 +134,7 @@ function get_products_list()
 {
 	global $db;
 
-	$sql = "SELECT * FROM products";
+	$sql = "SELECT * FROM products WHERE delete_product = '0'";
 	$stmt = $db->prepare($sql);
 
 	if ($stmt->execute()) {
@@ -182,7 +182,7 @@ function get_brand_by_id($brand_id)
 function delete_brand_by_id($brand_id)
 {
 	global $db;
-	$sql = "UPDATE brands SET deleted = '1', deleted_timestamp = NOW() WHERE brand_id = :brand_id";
+	$sql = "UPDATE brands SET deleted = '1' WHERE brand_id = :brand_id";
 	$stmt = $db->prepare($sql);
 	$stmt->bindParam(':id', $brand_id, PDO::PARAM_INT);
 
@@ -390,7 +390,7 @@ function add_product($data)
 		$full_profile = upload_image("full_profile", $image_folder);
 		$sole_profile = upload_image("sole_profile", $image_folder);
 
-		$sql = "INSERT INTO products (pro_name, brand, price, release_yr,  top_type, gender, specification, l_profile, r_profile, t_profile, full_profile, sole_profile, disable_product) VALUES (:pro_name, :brand, :price, :release_yr,  :top_type, :gender, :specification, :l_profile, :r_profile, :t_profile, :full_profile, :sole_profile, '0')";
+		$sql = "INSERT INTO products (pro_name, brand, price, release_yr,  top_type, gender, specification, l_profile, r_profile, t_profile, full_profile, sole_profile, delete_product) VALUES (:pro_name, :brand, :price, :release_yr,  :top_type, :gender, :specification, :l_profile, :r_profile, :t_profile, :full_profile, :sole_profile, '0')";
 		$stmt = $db->prepare($sql);
 		$stmt->bindParam(':pro_name', $pro_name, PDO::PARAM_STR);
 		$stmt->bindParam(':brand', $brand, PDO::PARAM_STR);
@@ -689,7 +689,44 @@ function get_order_detail_using_id($id)
 		}
 	}
 	
-	
+	function change_password($data)
+{
+    global $db;
+    extract($data);
+
+    if($new_password !== $confirm_password)
+    {
+        $_SESSION["error_messages"][] = "New password and Confirm Password does not match.";	
+    }
+
+    if(!isset($_SESSION["error_messages"]))
+    {
+        $new_password = create_hash($new_password);
+        $user_id = $_SESSION["user_id"];
+        $sql = "UPDATE users SET password=:new_password WHERE user_id = $user_id";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':new_password', $new_password,PDO::PARAM_STR);
+        
+        if($stmt->execute())
+        {
+            $_SESSION["success_messages"][] = "Congratulation, password successfully changed";
+            return true;
+        }
+        else
+        {
+            $_SESSION["error_messages"][] = "Sorry, password didn't changed.";
+        }
+    }
+    else
+    {
+        return false;
+    }
+}
+
+function include_view_messages_file()
+{
+    require_once($_SERVER["DOCUMENT_ROOT"]."/includes/prompts.php");
+}
 	
 	
 

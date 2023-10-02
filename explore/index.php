@@ -13,7 +13,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/includes/init.php");
                         class="text-decoration-none text-dark">
                         <div class="row ">
                             <div class="col-md-5 position-relative">
-                                <?php if ($sneaker["l_profile"] > 0): ?>
+                                <?php if ($sneaker["l_profile"] > '0'): ?>
                                     <img src="<?php echo substr($sneaker["l_profile"], 26); ?>"
                                         class="float-start catlg_pg_product_img img-fluid " alt="product image">
                                 <?php else: ?>

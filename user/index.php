@@ -11,7 +11,11 @@ if (isset($_POST["update_user_basic_details"])) {
     update_user_address_detail($_POST);
     redirect_to_current_page();
 }
-
+if(isset($_POST["change_password_btn"]))
+	{
+        change_password($_POST);
+		redirect_to_current_page();
+	}
 ?>
 <div class="row mx-5">
     <div class="col-lg-12">
@@ -225,29 +229,31 @@ if (isset($_POST["update_user_basic_details"])) {
             </form>
         </div>
         <div class="tab-pane fade pt-4" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-            <div class="row text-center">
-                <div class="col-md-12 px-3 py-3 mx-auto d-grid ">
-                    <label class="px-3 user_profile_txt" for="n_password">
-                        New Password
-                    </label>
-                    <input type="password"
-                        class="form-control text-center user_profile_fields box_shadow mx-auto d-grid reset_pass_fields"
-                        id="n_password" name="n_password" required>
+            <form role="form" action="<?php echo get_action_attr_value_for_current_page(); ?>" method="post" enctype="multipart/form-data">
+                <div class="row text-center">
+                    <div class="col-md-12 px-3 py-3 mx-auto d-grid ">
+                        <label class="px-3 user_profile_txt" for="new_password">
+                            New Password
+                        </label>
+                        <input type="password"
+                            class="form-control text-center user_profile_fields box_shadow mx-auto d-grid reset_pass_fields"
+                            id="new_password" name="new_password" required>
+                    </div>
+                    <div class="col-md-12  px-3 py-3 mx-auto d-grid">
+                        <label class="px-3 user_profile_txt" for="confirm_password">
+                            Confirm Password
+                        </label>
+                        <input type="password"
+                            class="form-control text-center user_profile_fields box_shadow reset_pass_fields mx-auto d-grid"
+                            id="confirm_password" name="confirm_password" required>
+                    </div>
                 </div>
-                <div class="col-md-12  px-3 py-3 mx-auto d-grid">
-                    <label class="px-3 user_profile_txt" for="c_password">
-                        Confirm Password
-                    </label>
-                    <input type="password"
-                        class="form-control text-center user_profile_fields box_shadow reset_pass_fields mx-auto d-grid"
-                        id="c_password" name="c_password" required>
+                <div class="mx-auto d-grid py-5" style="max-width: fit-content;">
+                    <button type="submit" class="btn btn-success  fw-bold update_btn box_shadow" id="change_password_btn" name="change_password_btn"><i
+                            class="fa-solid fa-arrow-rotate-left fa-lg px-2" style="color: #000000;"></i>Change
+                        Password</button>
                 </div>
-            </div>
-            <div class="mx-auto d-grid py-5" style="max-width: fit-content;">
-                <button type="button" class="btn btn-success  fw-bold update_btn box_shadow"><i
-                        class="fa-solid fa-arrow-rotate-left fa-lg px-2" style="color: #000000;"></i>Change
-                    Password</button>
-            </div>
+            </form>
         </div>
     </div>
 </div>
