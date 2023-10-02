@@ -375,57 +375,6 @@ function get_sizes()
 	}
 	return false;
 }
-//  function add_product($data)
-//  {
-// 	 global $db;
-// 	 extract($data);
-// 	 if(!isset($_SESSION["error_messages"]))
-// 	 {
-// 		 $file_name1 = $_FILES["l_profile"]["name"];
-// 		 $temp_name1 = $_FILES["l_profile"]["tmp_name"];
-// 		 $folder1 = "C:/xampp/htdocs/SoleGrails/assets/img".$file_name1;
-// 		 move_uploaded_file($temp_name1, $folder1);
-
-// 		 $file_name2 = $_FILES["r_profile"]["name"];
-// 		 $temp_name2 = $_FILES["r_profile"]["tmp_name"];
-// 		 $folder2 = "C:/xampp/htdocs/SoleGrails/assets/img".$file_name2;
-// 		 move_uploaded_file($temp_name2, $folder2);
-
-// 		 $file_name3 = $_FILES["t_profile"]["name"];
-// 		 $temp_name3 = $_FILES["t_profile"]["tmp_name"];
-// 		 $folder3 = "C:/xampp/htdocs/SoleGrails/assets/img".$file_name3;
-// 		 move_uploaded_file($temp_name3, $folder3);
-
-// 		 $file_name4 = $_FILES["full_profile"]["name"];
-// 		 $temp_name4 = $_FILES["full_profile"]["tmp_name"];
-// 		 $folder4= "C:/xampp/htdocs/SoleGrails/assets/img".$file_name4;
-// 		 move_uploaded_file($temp_name4, $folder4);
-
-// 		 $file_name5 = $_FILES["sole_profile"]["name"];
-// 		 $temp_name5 = $_FILES["sole_profile"]["tmp_name"];
-// 		 $folder5 = "C:/xampp/htdocs/SoleGrails/assets/img".$file_name5;
-// 		 move_uploaded_file($temp_name5, $folder5);
-
-// 		 $sql = "INSERT INTO products (id, pro_name, brand, price, release_yr, sizes, top_type,  gender, specification, l_profile, r_profile, t_profile, full_profile, sole_profile, disable_product) VALUES (:id, :pro_name, :brand, :price, :release_yr, :sizes, :top_type, :gender, :specification, '$folder1', '$folder2', '$folder3', '$folder4', '$folder5', '0')";
-// 		 $stmt = $db->prepare($sql);
-// 		 $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-// 		 $stmt->bindParam(':pro_name', $pro_name, PDO::PARAM_STR);
-// 		 $stmt->bindParam(':brand', $brand, PDO::PARAM_STR);
-// 		 $stmt->bindParam(':price', $price, PDO::PARAM_INT);
-// 		 $stmt->bindParam(':release_yr', $release_yr, PDO::PARAM_INT);
-// 		 $stmt->bindParam(':sizes', $sizes, PDO::PARAM_STR);
-// 		 $stmt->bindParam(':top_type', $top_type, PDO::PARAM_STR);
-// 		 $stmt->bindParam(':gender', $gender, PDO::PARAM_STR);
-// 		 $stmt->bindParam(':specification', $specification, PDO::PARAM_STR);
-
-// 		 if($stmt->execute())
-// 		 {
-// 			 $_SESSION["success_messages"][] = "Product Uploaded Successfully.";
-// 			 return true;
-// 		 }
-// 	 }
-// 	 return false;
-//  }
 
 function add_product($data)
 {
@@ -605,23 +554,42 @@ function get_sneakers_by_id($id)
 
 function add_to_cart($id)
 {
-	global $db;
-	$user_id = $_SESSION["user_id"];
-	$sql = "INSERT INTO cart (user_id, product_id) VALUES (:user_id, :id) ";
-	$stmt = $db->prepare($sql);
-	$stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
-	$stmt->bindParam(":id", $id, PDO::PARAM_INT);
+    global $db;
+    $user_id = $_SESSION["user_id"];
+    
+    // Checking if the item is already in the cart
+    $check_sql = "SELECT COUNT(*) FROM cart WHERE user_id = :user_id AND product_id = :id AND `delete` = '0'";
+    $check_stmt = $db->prepare($check_sql);
+    $check_stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
+    $check_stmt->bindParam(":id", $id, PDO::PARAM_INT);
+    $check_stmt->execute();
+    $count = $check_stmt->fetchColumn();
 
-	if ($stmt->execute()) {
-		$_SESSION["success_messages"][] = "Item added to the cart.<a href='/user/cart.php'>Check Here</a>";
-		return true;
-	}
-	return false;
+    if ($count > 0) {
+        // The item is already in the cart, do not insert again
+        $_SESSION["error_messages"][] = " This item is already in the cart.";
+        return false;
+    }
+
+    // If the item is not in the cart, inserting it
+    $sql = "INSERT INTO cart (user_id, product_id, `delete`) VALUES (:user_id, :id, '0')";
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
+    $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+
+    if ($stmt->execute()) {
+        $_SESSION["success_messages"][] = "Item added to the cart. <a href='/user/cart.php'>Check Here</a>";
+        return true;
+    }
+    
+    $_SESSION["error_messages"][] = "Error adding item to the cart.";
+    return false;
 }
+
 function delete_cart_item($id)
 {
 	global $db;
-	$sql = "UPDATE cart SET delete = '1', deleted_timestamp = NOW() WHERE product_id = :id";
+	$sql = "UPDATE cart SET `delete` = '1', deleted_timestamp = NOW() WHERE product_id = :id";
 	$stmt = $db->prepare($sql);
 	$stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
@@ -652,7 +620,7 @@ function get_cart_products_by_id()
 	global $db;
 	$user_id = $_SESSION["user_id"];
 
-	$sql = "SELECT * FROM cart WHERE user_id = :user_id AND delete = '0'";
+	$sql = "SELECT * FROM cart WHERE user_id = :user_id AND `delete` = '0' ";
 	$stmt = $db->prepare($sql);
 	$stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
 
@@ -662,4 +630,67 @@ function get_cart_products_by_id()
 		return false;
 	}
 }
+
+
+function get_orders()
+{
+	global $db;
+
+	$sql = "SELECT * FROM orders_placed ";
+	$stmt = $db->prepare($sql);
+
+	if ($stmt->execute()) {
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+	return false;
+}
+function insert_orders($id)
+{
+	global $db;
+	$user_id = $_SESSION['user_id'];
+
+	$sql = "INSERT INTO orders_placed (user_id, product_id )VALUES (:user_id, :product_id)";
+	$stmt = $db->prepare($sql);
+	$stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+	$stmt->bindParam(':product_id', $id, PDO::PARAM_INT);
+
+	if ($stmt->execute()) {
+		// $_SESSION["success_messages"][] = "Data entered successful";
+		return true;
+	}
+	return false;
+}
+function get_order_detail_using_id($id)
+	{
+		global $db;
+		$sql = "SELECT * FROM orders_placed WHERE id = :id";
+		$stmt = $db->prepare($sql);
+		$stmt->bindParam(":id", $id, PDO::PARAM_INT);
+
+		if ($stmt->execute() )
+		{
+			return $stmt->fetch(PDO::FETCH_ASSOC);
+		}
+		return false;
+	}
+	
+	function getCartItemCount($userID) {
+		global $db;
+		$sql = "SELECT COUNT(*) as cart_count FROM cart WHERE user_id = :user_id AND `delete` = '0'";
+		$stmt = $db->prepare($sql);
+		$stmt->bindParam(':user_id', $userID, PDO::PARAM_INT);
+		$stmt->execute();
+		$result = $stmt->fetch(PDO::FETCH_ASSOC);
+	
+		if ($result) {
+			return $result['cart_count'];
+		} else {
+			return 0; // Return 0 if there was an error or no matching records found
+		}
+	}
+	
+	
+	
+	
+
 ?>

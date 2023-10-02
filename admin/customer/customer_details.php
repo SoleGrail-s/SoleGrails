@@ -7,6 +7,7 @@ if (isset($_GET["user_id"]) && !empty($_GET["user_id"]) && is_numeric($_GET["use
     $id = trim($_GET["user_id"]);
     $user = get_user_details_by_passing_id($id);
 }
+
 ?>
 <nav class="lora_font ms-5 my-2 " aria-label="breadcrumb lora_font ms-2">
     <ol class="breadcrumb">
@@ -34,13 +35,15 @@ if (isset($_GET["user_id"]) && !empty($_GET["user_id"]) && is_numeric($_GET["use
             </div>
             <div class="col-md-4">
                 <p>Customer since:<b class="border-0 text-center text-muted ps-2" name="custome_id" id="custome_id">
-                        <?php echo $user["created_timestamp"]; ?>
+                        <?php echo date('Y', strtotime($user["created_timestamp"])) ?>
                     </b></p>
                 </p>
             </div>
             <div class="col-md-4">
                 <p>Profile last updated:<b class="border-0 text-center text-muted ps-2" name="custome_id"
-                        id="custome_id"></b></p>
+                        id="custome_id">
+                        <?php echo $user["modified_timestamp"]; ?>
+                    </b></p>
             </div>
             <div class=" row px-3">
                 <label for="" class="my-4 details_section">Basic Details</label>
@@ -121,7 +124,7 @@ if (isset($_GET["user_id"]) && !empty($_GET["user_id"]) && is_numeric($_GET["use
                     <div><b class="form-control " style="border-color: #00000084; border-radius: 10px;height: 40px; ">
                             <?php echo $user["state"]; ?>
                         </b></div>
-                    <select class="form-select" size="1" style="border-color: #00000084; border-radius: 10px;">
+                    <!-- <select class="form-select" size="1" style="border-color: #00000084; border-radius: 10px;">
                         <option selected>Select your state</option>
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
@@ -159,7 +162,7 @@ if (isset($_GET["user_id"]) && !empty($_GET["user_id"]) && is_numeric($_GET["use
                         <option value="Uttar Pradesh">Uttar Pradesh</option>
                         <option value="Uttarakhand">Uttarakhand</option>
                         <option value="West Bengal">West Bengal</option>
-                    </select>
+                    </select> -->
                 </div>
                 <div class="col">
                     <label style="display: block; color: #5c5c5c;">

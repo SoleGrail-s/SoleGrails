@@ -59,7 +59,8 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/includes/init.php");
               <td class="text-center">
                 <?php echo $user["state"] ?>
               </td>
-              <td class="text-center"><a href="/admin/customer/customer_details?user_id=<?php echo $user["user_id"]; ?>"><i
+              <td class="text-center"><a
+                  href="/admin/customer/customer_details.php?user_id=<?php echo $user["user_id"]; ?>"><i
                     class="fa-solid fa-eye fa-lg view_details"></i></a>
               </td>
               <!-- <td class="text-center"><i class="fa-solid fa-trash-can fa-lg delete_item"></i></td> -->

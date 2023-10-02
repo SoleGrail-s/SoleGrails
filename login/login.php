@@ -40,5 +40,4 @@ if (isset($_POST["login_btn"])) {
             </p>
         </div>
     </form>
-
 </div>

@@ -9,10 +9,8 @@ if (isset($_GET["q"]) && !empty($_GET["q"]) && is_numeric($_GET["q"])) {
 }
 
 if (isset($_POST["add_to_cart_btn"])) {
-
   add_to_cart($id);
   redirect_to_current_page("q=$id");
-
 }
 ?>
 
@@ -87,8 +85,6 @@ if (isset($_POST["add_to_cart_btn"])) {
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-
-
     <div class="row">
       <div class="col-md-9">
         <div class="mt-3">
@@ -131,8 +127,8 @@ if (isset($_POST["add_to_cart_btn"])) {
           <div class="col  text-center mx-2 py-auto">
             <div class="d-flex details_page_btn align-items-center justify-content-center h-100  ">
               <?php if (isset($_SESSION["user_id"]) && ($_SESSION["role"]) && ($_SESSION["role"] === "user")): ?>
-                <button type="submit" class="text-uppercase mx-auto d-block col-md-6 txt_dec" name="add_to_cart_btn"
-                  id="add_to_cart_btn">Add
+                <button type="submit" class="text-uppercase mx-auto  btn d-block col-md-6 txt_dec add_to_cart_btn"
+                  name="add_to_cart_btn" id="add_to_cart_btn">Add
                   to
                   cart</button>
               <?php else: ?>
@@ -144,12 +140,14 @@ if (isset($_POST["add_to_cart_btn"])) {
             </div>
           </div>
           <div class="col text-center mx-1">
+            <div id="size_is_essential" class="text-danger"></div>
+
             <select class="form-select text-uppercase text-center fw-bold mx-auto d-block col-md-6"
-              aria-label="Default select example">
+              aria-label="Default select example" id="size_dropdown" required>
               <option selected disabled>Size</option>
               <?php if ($sizes = get_sizes()): ?>
                 <?php foreach ($sizes as $size): ?>
-                  <option value="<?php echo $size["id"]; ?>">
+                  <option value="<?php echo $size["sizes"]; ?>">
                     <?php echo $size["sizes"]; ?>
                   </option>
                 <?php endforeach; ?>
@@ -180,6 +178,34 @@ if (isset($_POST["add_to_cart_btn"])) {
 
   </form>
 </div>
-<?php
+
+<script>
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const size_dropdown = document.getElementById('size_dropdown');
+    const buy_product_btn = document.getElementById('buy_product_btn');
+    const error_msg = document.getElementById('size_is_essential');
+
+    buy_product_btn.addEventListener('click', function (event) {
+      const selected_size = size_dropdown.value.trim();
+
+      if (selected_size === "") {
+        event.preventDefault();
+        error_msg.innerHTML = "Please select a size";
+      } else {
+        // Append the selected size as a query parameter to the Buy button's href
+        buy_product_btn.href = `/user/order_confirmation.php?q=<?php echo $sneaker["id"]; ?>&s=${selected_size}`;
+
+      }
+    });
+  });
+
+
+
+</script>
+
+
+  <?php
 require_once($_SERVER["DOCUMENT_ROOT"] . "/includes/footer.php")
-  ?>
+    ?>

@@ -107,7 +107,8 @@ if (isset($_POST["update_user_basic_details"])) {
 
         </div>
         <div class="tab-pane fade pt-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            <form action="">
+            <form role="form" action="<?php echo get_action_attr_value_for_current_page(); ?>" method="post"
+                enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-4 px-5 pb-3 ">
                         <label class="px-3 user_profile_txt" for="contact_no">
@@ -120,8 +121,8 @@ if (isset($_POST["update_user_basic_details"])) {
                         <label class="px-3 user_profile_txt" for="alternate_no">
                             Alternate Number
                         </label>
-                        <input type="number" class="form-control text user_profile_fields box_shadow" id="alternate_no"
-                            name="alternate_no" value="<?php echo $user_info["alternate_no"] ?>">
+                        <input type="number " class="form-control text user_profile_fields box_shadow "
+                            id="alternate_no" name="alternate_no" value="<?php echo $user_info["alternate_no"] ?>">
                     </div>
                     <div class="col-md-4 px-5 pb-3">
                         <label class="px-3 user_profile_txt" for="email_id">
@@ -161,9 +162,49 @@ if (isset($_POST["update_user_basic_details"])) {
                         <label class="px-3 user_profile_txt" for="state">
                             State
                         </label>
-                        <input type="text" class="form-control text user_profile_fields box_shadow"
-                            style="max-width: fit-content;" id="state" name="state"
-                            value="<?php echo $user_info["state"] ?>" required>
+                        <select id="state" name="state" class="form-control text user_profile_fields box_shadow"
+                            required>
+                            <option value="  " selected disabled>
+                                <?php echo $user_info["state"] ?>
+                            </option>
+                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                            <option value="Daman and Diu">Daman and Diu</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Ladakh">Ladakh</option>
+                            <option value="Lakshadweep">Lakshadweep</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Puducherry">Puducherry</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                        </select>
 
                     </div>
                     <div class="col-md-3 px-5 pb-3">
@@ -174,18 +215,14 @@ if (isset($_POST["update_user_basic_details"])) {
                             style="max-width: fit-content;" id="country" name="country"
                             value="<?php echo $user_info["country"] ?>" disabled>
                     </div>
-
                 </div>
                 <div class="mx-auto d-grid py-5" style="max-width: fit-content;">
-
                     <button type="submit" class="btn btn-warning fw-bold update_btn box_shadow "
                         name="update_user_contact_&_add_details" id="update_user_contact_&_add_details"><i
                             class="fa-regular fa-circle-check fa-lg px-1" style="color: #000000;"></i>Update
                         contact & address</button>
                 </div>
-
             </form>
-
         </div>
         <div class="tab-pane fade pt-4" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
             <div class="row text-center">

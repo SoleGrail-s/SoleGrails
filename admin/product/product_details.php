@@ -42,7 +42,6 @@ if (isset($_GET["id"]) && !empty($_GET["id"]) && is_numeric($_GET["id"])) {
                         <?php echo $product["id"]; ?>
                     </b></p>
             </div>
-
         </div>
         <div class="mx-4 mt-3 ">
             <label style="color: #5c5c5c;">
@@ -94,7 +93,6 @@ if (isset($_GET["id"]) && !empty($_GET["id"]) && is_numeric($_GET["id"])) {
                 </div>
             </div>
             <div class=" col-md-2">
-
                 <label style="color: #5c5c5c;">
                     Price
                 </label>

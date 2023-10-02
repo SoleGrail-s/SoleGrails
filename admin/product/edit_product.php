@@ -105,14 +105,6 @@ if (isset($_POST["edit_product"])) {
                         <?php endif; ?>
                     </select>
                 </div>
-                <!-- <div class="col-md-2">
-                            <select class="form-select" id="floatingSelect">
-                                <option selected>Size</option>
-                                <option value="1">13</option>
-                                <option value="2">12.5</option>
-                                <option value="3">12</option>
-                            </select>
-                        </div> -->
                 <div class="col-md-2">
                     <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
                         name="gender">

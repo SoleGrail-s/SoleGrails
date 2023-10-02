@@ -10,7 +10,6 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/includes/init.php");
         <li class="breadcrumb-item " aria-current="page">
             <a href="/admin/index.php" class="txt_dec">Fields</a>
         </li>
-
     </ol>
 </nav>
 <div class="card mx-5 border-1 mb-5 mt-2"
@@ -25,13 +24,12 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/includes/init.php");
                 <button type="button" class=" btn-lg  m-auto fw-bold box_shadow admin_panel_btn">Add Brands</button>
             </a>
         </div>
-        <div class="col p-3">
+        <!-- <div class="col p-3">
             <a href="/admin/view_customer.php" class="txt_dec">
                 <button type="button" class=" btn-lg  m-auto fw-bold box_shadow admin_panel_btn">Add Categories</button>
             </a>
-        </div>
+        </div> -->
     </div>
-
 </div>
 </div>
 

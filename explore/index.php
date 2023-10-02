@@ -41,13 +41,10 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/includes/init.php");
                                                 <?php echo ($sneaker["price"]); ?>
                                             </i></button>
                                     </div>
-
                                 </div>
                             </div>
-
                         </div>
                     </a>
-
                 </div>
             </div>
         <?php endforeach; ?>

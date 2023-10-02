@@ -3,15 +3,6 @@ $page_title = "Home Page";
 require_once($_SERVER["DOCUMENT_ROOT"] . "/includes/init.php");
 ?>
 
-
-<style>
-    .shop_now {
-        background-color: #D87300;
-        border-radius: 5px;
-    }
-</style>
-
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 p-0">

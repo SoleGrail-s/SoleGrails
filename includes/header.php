@@ -72,7 +72,6 @@
 
 					<body class="roboto_font ">
 					<?php endif; ?>
-
 					<?php if (!isset($display_navbar_flag)) {
 						$display_navbar_flag = true;
 					}
@@ -94,56 +93,53 @@
 										<div class="col-3 orange_r  pe-2 "></div>
 										<div class="col-3 yellow_r  pe-2 "></div>
 									</div>
-									<!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-										data-bs-target="#mynavbar">
-										<span class="navbar-toggler-icon"></span>
-									</button> -->
 								</div>
 							</nav>
 						<?php else: ?>
 							<nav class="navbar navbar-expand-sm primary_navbar  ">
 								<div class="container-fluid">
-									<!-- <a class="ms-3 navbar-brand" href="/index.php">
-										<h3 class="lora_font fw-bolder brand_name ms-4">SoleGrail's</h3>
-									</a>
-									<div class="row">
-										<div class="col white_r"></div>
-										<div class="col black_r"></div>
-										<div class="col orange_r"></div>
-										<div class="col yellow_r"></div>
-									</div> -->
 									<div class="row text-center mx-auto border-bottom-3">
 										<!-- <h3 class="lora_font fw-bolder brand_name">SoleGrail's</h3> -->
-										<a class="ms-3 navbar-brand brand_name" href="/index.php">
+										<a class="ms-3 navbar-brand " href="/index.php">
 											<h3 class="lora_font fw-bolder brand_name ms-4 txt_shadow">SoleGrail's</h3>
 										</a>
-										<div class="col-3 white_r    ms-0 pe-2"></div>
+										<!-- <div class="col-3 white_r    ms-0 pe-2"></div>
 										<div class="col-3 black_r   pe-2"></div>
 										<div class="col-3 orange_r  pe-2 "></div>
-										<div class="col-3 yellow_r  pe-2 "></div>
+										<div class="col-3 yellow_r  pe-2 "></div> -->
 									</div>
 									<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 										data-bs-target="#collapsibleNavbar">
 										<span class="navbar-toggler-icon"></span>
 									</button>
-									<div class="collapse navbar-collapse " id="collapsibleNavbar" style="z-index: 12;">
+									<div class="collapse navbar-collapse " id="collapsibleNavbar" style="z-index: 25;">
 										<ul class="navbar-nav ms-auto roboto_font me-4">
 											<?php if (isset($_SESSION["user_id"]) && ($_SESSION["role"]) && ($_SESSION["role"] === "user")): ?>
-												<li class="nav-item my-auto px-1">
-													<a href="/user/">
-														<i class="fa-solid fa-user fa-lg " style="color: #000000;"></i>
-													</a>
-												</li>
-												<li class="nav-item my-auto px-1">
-													<a href="/user/cart.php">
-														<i class="fa-solid fa-cart-shopping fa-lg" style="color: #000000;">
-														</i>
-													</a>
-												</li>
-												<li class="nav-item px-1">
-													<a class="nav-link fw-bold text-dark" href="/logout.php">Logout</a>
-												</li>
-
+												<?php if ($page_title === 'Order Confirmed' || $page_title === 'Cart' || $page_title === 'Order Confirmation'): ?>
+													<li class="nav-item my-auto px-1">
+														<a href="/user/index.php">
+															<i class="fa-solid fa-user fa-lg " style="color: #000000;"></i>
+														</a>
+													</li>
+													<li class="nav-item px-1">
+														<a class="nav-link fw-bold text-dark" href="/logout.php">Logout</a>
+													</li>
+												<?php else: ?>
+													<li class="nav-item my-auto px-1">
+														<a href="/user/index.php">
+															<i class="fa-solid fa-user fa-lg " style="color: #000000;"></i>
+														</a>
+													</li>
+													<li class="nav-item my-auto px-1">
+														<a href="/user/cart.php">
+															<i class="fa-solid fa-cart-shopping fa-lg" style="color: #000000;">
+															</i>
+														</a>
+													</li>
+													<li class="nav-item px-1">
+														<a class="nav-link fw-bold text-dark" href="/logout.php">Logout</a>
+													</li>
+												<?php endif ?>
 											<?php elseif (isset($_SESSION["user_id"]) && ($_SESSION["role"]) && ($_SESSION["role"] === "admin")): ?>
 												<li class="nav-item">
 													<a class="nav-link fw-bold text-dark" href="/logout.php">Logout</a>
@@ -152,31 +148,21 @@
 												<li class="nav-item">
 													<a class="nav-link fw-bold text-dark" href="/logout.php">Logout</a>
 												</li>
-
 											<?php else: ?>
 												<li class="nav-item">
 													<a class="nav-link fw-bold text-dark" href="/login/login">Login</a>
 												</li>
 												<li class="nav-item">
 													<a class="nav-link fw-bold text-dark"
-														href="/registration/register">Registration</a>
+														href="/registration/register.php">Registration</a>
 												</li>
 											<?php endif; ?>
-
 										</ul>
 									</div>
 								</div>
 							</nav>
 						<?php endif; ?>
 					<?php endif; ?>
-
-
-					<!-- <?php if (isset($page_title) && !empty($page_title)): ?>
-		<link rel="stylesheet" href="/assets/css/navbar.css">
-	<?php else: ?>
-		<link rel="stylesheet" href="/assets/css/navbar_home.css">
-	<?php endif; ?> -->
-
 					<style>
 						.home-nav-item:hover {
 							background-color: ;
